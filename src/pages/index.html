@@ -96,17 +96,17 @@ title: Проект "Оборона Києва"
 
               {{#each rows}}
               <div class="photoCont">
-                <div class="photoTitle" data-toggle="photo-{{@index}}">
+                <div class="photoTitle" data-toggle="photoM-{{@../index}}{{@index}}">
                   <div class="dateCont forDate">{{ date }}</div>
                   <div class="photoTitleText">{{ title }}</div>
                   <div class="photoButton">
                     <div class="arrow-down"></div>
                   </div>
                 </div>
-                <div class="photoTextCont" id="photo-{{@index}}" data-toggler=".expanded">
+                <div class="photoTextCont" id="photoM-{{@../index}}{{@index}}" data-toggler=".expanded">
                   <div class="imageCont">
                     <a href="{{ link }}" target="_blank" class="thumbnail thumbnailForMap">
-                      <img src="/assets/img/{{ image }}">
+                      <img src="assets/img/{{ image }}">
                     </a>
                   </div>
                   <div class="contentPhoto padding-right-2">
@@ -146,7 +146,7 @@ title: Проект "Оборона Києва"
             <div class="photoTextCont" id="photo-{{@index}}" data-toggler=".expanded">
               <div class="imageCont">
                 <a href="{{ link }}" target="_blank">
-                  <img src="/assets/img/{{ image }}" class="thumbnail">
+                  <img src="assets/img/{{ image }}" class="thumbnail">
                 </a>
               </div>
               <div class="contentPhoto padding-right-2">
@@ -181,7 +181,7 @@ title: Проект "Оборона Києва"
             </div>
             <div class="videoTextCont" id="video-{{@index}}" data-toggler=".expanded">
               <div class="imageCont">
-                <img src="/assets/img/{{ image }}" class="thumbnail">
+                <img src="assets/img/{{ image }}" class="thumbnail">
               </div>
               <div class="contentVideo padding-right-2">
                 <div class="content">
