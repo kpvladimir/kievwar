@@ -75,6 +75,24 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
+
+$sc:(
+  haki: #c3b091,
+  haki-grey: #beaf96,
+  haki-hi: #c9b28b,
+  haki-dark: #ab9065,
+  haki-light: #e1d7c8,
+  grey: #aaaaaa,
+  silver: #c0c0c0,
+  dark: #3c4f6e,
+  haki-tan: #d2b48c,
+  zagar: #d2b48c,
+  pesok: #dabdab,
+  boloto: #acb78e,
+  haki-gren: #bdb76b,
+  orange: #f4a460
+);
+
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
@@ -82,7 +100,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Nunito','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-safe-padding: false;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -165,7 +183,7 @@ $header-styles: (
   ),
 );
 $header-text-rendering: optimizeLegibility;
-$small-font-size: 80%;
+$small-font-size: 90%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;

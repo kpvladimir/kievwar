@@ -1,0 +1,42 @@
+[
+    {
+        "text":"Головна",
+        "href": "/",
+        "alias": "index"
+    },
+    {
+        "text":"Події",
+        "href": "/actions.html",
+        "alias": "actions"
+    },
+    {
+        "text":"Ситуація",
+        "href": "/situation.html",
+        "alias": "situation"
+    },
+    {
+        "text":"Історії",
+        "href": "/history.html",
+        "alias": "history"
+    },
+    {
+        "text":"Мапи",
+        "href": "/maps.html",
+        "alias": "maps"
+    },
+    {
+        "text":"Фото",
+        "href": "/photo.html",
+        "alias": "photo"
+    },
+    {
+        "text":"Відео",
+        "href": "/video.html",
+        "alias": "video"
+    },
+    {
+        "text":"Про проект",
+        "href": "/about.html",
+        "alias": "about"
+    }
+]

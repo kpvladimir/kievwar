@@ -1,0 +1,35 @@
+---
+title: Ситуація
+---
+{{> pagetitle}}
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+        <div class="large-3 cell">
+            {{> sources}}
+        </div>
+        <div class="large-9 cell">
+
+            {{#each video}}
+            <div class="mTitle">{{m}}</div>
+            {{#each dataM}}
+
+            <div class="dCont">
+                <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
+                    <div class="dTitleText">{{d}}</div>
+                    <div class="arrowButton">
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler=".expanded">
+
+
+
+                </div>
+            </div>
+
+            {{/each}}
+            {{/each}}
+
+        </div>
+    </div>
+</div>

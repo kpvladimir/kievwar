@@ -1,0 +1,87 @@
+---
+title: Відео
+---
+{{> pagetitle}}
+
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+        <div class="large-3 cell">
+            {{> sources}}
+        </div>
+        <div class="large-9 cell">
+
+            {{#each video}}
+            <div class="mTitle">{{m}}</div>
+            {{#each dataM}}
+
+            <div class="dCont">
+                <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
+                    <div class="dTitleText">{{d}}</div>
+                    <div class="arrowButton">
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler=".expanded">
+
+                    {{#each ../../data}}
+                    {{#ifequal type 'video'}}
+                    {{#each rows}}
+                    <div class="videoCont">
+                        <div class="videoTitle"
+                            data-toggle="video-{{@index}}{{@../index}}{{@../../index}}{{@../../../index}}">
+                            <div class="dateCont forTime">{{ time }}</div>
+                            <div class="videoTitleText">{{ title }}</div>
+                            <div class="videoButton">
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                        <div class="videoTextCont" id="video-{{@index}}{{@../index}}{{@../../index}}{{@../../../index}}"
+                            data-toggler=".expanded">
+                            <div class="imageCont">
+                                <img src="/assets/img/{{ image }}" class="thumbnail">
+                            </div>
+                            <div class="contentVideo padding-right-2">
+                                <div class="content">
+                                    <p>{{ text }}</p>
+                                    <div class="grid-x align-middle align-justify">
+                                        <button class="button margin-0"
+                                            data-open="videomodal-{{@index}}">Дивитись</button>
+                                        <a href="{{ link }}" target="_blank" class="text-right ext-link">Дивитись на
+                                            Youtube</a>
+                                    </div>
+                                </div>
+
+                                <div class="sourceLink">
+                                    <b>Джерело:</b> {{source}} <a href="" data-source="{{source}}" class="infoLink"
+                                        title="Інформація про джерело"><span>i</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--div class="reveal" id="videomodal-{{@index}}{{@../index}}{{@../../index}}" data-reveal>
+
+                        <div class="responsive-embed widescreen">
+                            <iframe width="560" height="315" src="{{linkembed}}" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+
+                        <button class="close-button" data-close aria-label="Close modal" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div-->
+
+                    {{/each}}
+                    {{/ifequal}}
+                    {{/each}}
+
+
+                </div>
+            </div>
+
+            {{/each}}
+            {{/each}}
+
+        </div>
+    </div>
+</div>

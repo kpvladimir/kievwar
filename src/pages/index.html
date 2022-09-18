@@ -1,150 +1,221 @@
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
-          <h1>Welcome to Foundation</h1>
-        </div>
-      </div>
+---
+title: Проект "Оборона Києва"
+---
+{{> pagetitle}}
+<div class="grid-container">
+  <div class="grid-x grid-padding-x">
+    <div id="sidebar" class="large-3 cell sidebar">
+      {{> datefilter}}
+    </div>
+    <div class="large-9 cell">
+      {{#each data}}
+      <div class="docContainer">
+        <div class="docTitle">{{ title }}</div>
+        <div class="docData">
 
-      <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
-          <div class="callout">
-            <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-            <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
-            <p>Once you've exhausted the fun in this document, you should check out:</p>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 medium-push-2 cell">
-                <p><a href="https://get.foundation/sites/docs/">Foundation Documentation</a><br />Everything you need to know about using the framework.</p>
-              </div>
-              <div class="large-4 medium-4 medium-push-2 cell">
-                <p><a href="https://github.com/foundation/foundation-emails/discussions">Foundation Forum</a><br />Join the Foundation community to ask a question or show off your knowlege.</p>
+          {{#ifequal type 'action'}}
+
+          {{#each rows}}
+          <div class="actionCont">
+            <div class="actionsTitle" data-toggle="action-{{@index}}">
+              <div class="dateCont forTime">{{ time }}</div>
+              <div class="actionTitleText">{{ title }}</div>
+              <div class="actionButton">
+                <div class="arrow-down"></div>
               </div>
             </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 medium-push-2 cell">
-                <p><a href="http://github.com/foundation/foundation-sites">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</p>
+            <div class="actionTextCont" id="action-{{@index}}" data-toggler=".expanded">
+              <div class="content">
+                {{ text }}
               </div>
-              <div class="large-4 medium-4 medium-pull-2 cell">
-                <p><a href="https://twitter.com/FoundationCSS">@FoundationCSS</a><br />Ping us on Twitter if you have questions. When you build something with this we'd love to see it (and send you a totally boss sticker).</p>
-              </div>
+              <a href="{{ link }}" target="_blank" class="text-right ext-link">Джерело</a>
             </div>
           </div>
-        </div>
-      </div>
+          {{/each}}
 
-      <div class="grid-x grid-padding-x">
-        <div class="large-8 medium-8 cell">
-          <h5>Here&rsquo;s your basic grid:</h5>
-          <!-- Grid Example -->
+          {{/ifequal}}
 
-          <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-              <div class="primary callout">
-                <p><strong>This is a twelve cell section in a grid-x.</strong> Each of these includes a div.callout element so you can see where the cell are - it's not required at all for the grid.</p>
+          {{#ifequal type 'situation'}}
+
+          {{#each sources}}
+          <div class="sourceCont">
+            <div class="sourceTitle" data-toggle="source-{{@index}}">
+              <div class="sourceTitleText"><span>&#10022;</span> {{ name }}</div>
+              <div class="sourceInfo">
+                <div title="Інформація">i</div>
               </div>
+              <div class="sourceButton">
+                <div class="arrow-down"></div>
+              </div>
+            </div>
+            <div class="sourceDataCont" id="source-{{@index}}" data-toggler=".expanded">
+
+              {{#each rows}}
+              <div class="situationCont">
+                <div class="situationTitle" data-toggle="situation-{{@../index}}{{@index}}">
+                  <div class="dateCont forDate">{{ date }}</div>
+                  <div class="situationTitleText">{{ title }}</div>
+                  <div class="situationButton">
+                    <div class="arrow-down"></div>
+                  </div>
+                </div>
+                <div class="situationTextCont" id="situation-{{@../index}}{{@index}}" data-toggler=".expanded">
+                  <div class="content">
+                    {{ text }}
+                  </div>
+                  <a href="{{ link }}" target="_blank" class="text-right ext-link">Джерело ({{ ../name }})</a>
+                </div>
+              </div>
+              {{/each}}
+
             </div>
           </div>
-          <div class="grid-x grid-padding-x">
-            <div class="large-6 medium-6 cell">
-              <div class="primary callout">
-                <p>Six cell</p>
+          {{/each}}
+
+          {{/ifequal}}
+
+          {{#ifequal type 'history'}}
+          {{#each rows}}
+          {{ title }}
+          {{/each}}
+          {{/ifequal}}
+
+          {{#ifequal type 'maps'}}
+          {{#each sources}}
+          <div class="sourceCont">
+            <div class="sourceTitle" data-toggle="sourceMap-{{@index}}">
+              <div class="sourceTitleText"><span>&#10022;</span> {{ name }}</div>
+              <div class="sourceInfo">
+                <div title="Інформація">i</div>
+              </div>
+              <div class="sourceButton">
+                <div class="arrow-down"></div>
               </div>
             </div>
-            <div class="large-6 medium-6 cell">
-              <div class="primary callout">
-                <p>Six cell</p>
+            <div class="sourceDataCont" id="sourceMap-{{@index}}" data-toggler=".expanded">
+
+              {{#each rows}}
+              <div class="photoCont">
+                <div class="photoTitle" data-toggle="photo-{{@index}}">
+                  <div class="dateCont forDate">{{ date }}</div>
+                  <div class="photoTitleText">{{ title }}</div>
+                  <div class="photoButton">
+                    <div class="arrow-down"></div>
+                  </div>
+                </div>
+                <div class="photoTextCont" id="photo-{{@index}}" data-toggler=".expanded">
+                  <div class="imageCont">
+                    <a href="{{ link }}" target="_blank" class="thumbnail thumbnailForMap">
+                      <img src="/assets/img/{{ image }}">
+                    </a>
+                  </div>
+                  <div class="contentPhoto padding-right-2">
+                    <div class="content">
+                      <p>{{ text }}</p>
+                      <a href="{{ link }}" target="_blank" class="text-right ext-link">Дивитись мапу</a>
+                    </div>
+                    <div class="grid-x align-middle align-justify">
+                      <div class="sourceLink">
+                        <b>Джерело:</b> {{source}} <a href="" data-source="{{source}}" class="infoLink"
+                          title="Інформація про джерело"><span>i</span></a>
+                      </div>
+                      <div class="sourceLink">
+                        <b>Автор:</b> {{avtor}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+              {{/each}}
+
             </div>
           </div>
-          <div class="grid-x grid-padding-x">
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Four cell</p>
-              </div>
-            </div>
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Four cell</p>
-              </div>
-            </div>
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Four cell</p>
-              </div>
-            </div>
-          </div>
+          {{/each}}
+          {{/ifequal}}
 
-          <hr />
-
-          <h5>We bet you&rsquo;ll need a form somewhere:</h5>
-          <form>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-12.cell" />
+          {{#ifequal type 'photo'}}
+          {{#each rows}}
+          <div class="photoCont">
+            <div class="photoTitle" data-toggle="photo-{{@index}}">
+              <div class="dateCont forDate">{{ date }}</div>
+              <div class="photoTitleText">{{ title }}</div>
+              <div class="photoButton">
+                <div class="arrow-down"></div>
               </div>
             </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-4.cell" />
+            <div class="photoTextCont" id="photo-{{@index}}" data-toggler=".expanded">
+              <div class="imageCont">
+                <a href="{{ link }}" target="_blank">
+                  <img src="/assets/img/{{ image }}" class="thumbnail">
+                </a>
               </div>
-              <div class="large-4 medium-4 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-4.cell" />
-              </div>
-              <div class="large-4 medium-4 cell">
-                <div class="grid-x">
-                  <label>Input Label</label>
-                  <div class="input-group">
-                    <input type="text" placeholder="small-9.cell" class="input-group-field" />
-                    <span class="input-group-label">.com</span>
+              <div class="contentPhoto padding-right-2">
+                <div class="content">
+                  <p>{{ text }}</p>
+                  <a href="{{ link }}" target="_blank" class="text-right ext-link">Дивитись фото</a>
+                </div>
+                <div class="grid-x align-middle align-justify">
+                  <div class="sourceLink">
+                    <b>Джерело:</b> {{source}} <a href="" data-source="{{source}}" class="infoLink"
+                      title="Інформація про джерело"><span>i</span></a>
+                  </div>
+                  <div class="sourceLink">
+                    <b>Автор:</b> {{avtor}}
                   </div>
                 </div>
               </div>
             </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Select Box</label>
-                <select>
-                  <option value="husker">Husker</option>
-                  <option value="starbuck">Starbuck</option>
-                  <option value="hotdog">Hot Dog</option>
-                  <option value="apollo">Apollo</option>
-                </select>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-6 medium-6 cell">
-                <label>Choose Your Favorite</label>
-                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
-                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
-              </div>
-              <div class="large-6 medium-6 cell">
-                <label>Check these out</label>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Textarea Label</label>
-                <textarea placeholder="small-12.cell"></textarea>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="large-4 medium-4 cell">
-          <h5>Try one of these buttons:</h5>
-          <p><a href="#" class="button">Simple Button</a><br/>
-            <a href="#" class="success button">Success Btn</a><br/>
-            <a href="#" class="alert button">Alert Btn</a><br/>
-            <a href="#" class="secondary button">Secondary Btn</a></p>
-          <div class="callout">
-            <h5>So many components, girl!</h5>
-            <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
-            <a href="https://get.foundation/sites/docs/" class="small button">Go to Foundation Docs</a>
           </div>
+          {{/each}}
+          {{/ifequal}}
+
+          {{#ifequal type 'video'}}
+          {{#each rows}}
+          <div class="videoCont">
+            <div class="videoTitle" data-toggle="video-{{@index}}">
+              <div class="dateCont forDate">{{ date }}</div>
+              <div class="videoTitleText">{{ title }}</div>
+              <div class="videoButton">
+                <div class="arrow-down"></div>
+              </div>
+            </div>
+            <div class="videoTextCont" id="video-{{@index}}" data-toggler=".expanded">
+              <div class="imageCont">
+                <img src="/assets/img/{{ image }}" class="thumbnail">
+              </div>
+              <div class="contentVideo padding-right-2">
+                <div class="content">
+                  <p>{{ text }}</p>
+                  <div class="grid-x align-middle align-justify">
+                    <button class="button margin-0" data-open="videomodal-{{@index}}">Дивитись</button>
+                    <a href="{{ link }}" target="_blank" class="text-right ext-link">Дивитись на Youtube</a>
+                  </div>
+                </div>
+
+                <div class="sourceLink">
+                  <b>Джерело:</b> {{source}} <a href="" data-source="{{source}}" class="infoLink"
+                    title="Інформація про джерело"><span>i</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal" id="videomodal-{{@index}}" data-reveal>
+
+            <div class="responsive-embed widescreen">
+              <iframe width="560" height="315" src="{{linkembed}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          {{/each}}
+          {{/ifequal}}
         </div>
       </div>
+      {{/each}}
     </div>
+  </div>
+</div>

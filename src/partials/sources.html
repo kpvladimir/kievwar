@@ -1,0 +1,5 @@
+      <ul class="vertical menu filterSource">
+          {{#each sources}}
+          <li {{#ifequal @index 0}}class="active" {{/ifequal}}><a href="#">{{ this }}</a></li>
+          {{/each}}
+      </ul>

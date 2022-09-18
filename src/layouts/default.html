@@ -1,19 +1,97 @@
-{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
-
 <!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
-    <link rel="stylesheet" href="{{root}}assets/css/app.css">
-  </head>
+<html class="no-js" lang="uk">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} - {{ site.name }}</title>
+  <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
 <body>
 
-{{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-{{> body}}
+  <div class="title-bar" data-sticky-container data-responsive-toggle="responsive-menu" data-hide-for="large">
+    <div class="title-bar-left">
+      <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+    </div>
+    <div class="title-bar-center">
+      <span class="title-bar-title">{{ site.slogan }}</span>
+    </div>
+    <div class="title-bar-right">
+      <span class="title-bar-text">Пошук</span>
+      <span class="title-bar-text"><a href="#"><i class="fa fa-home title-bar-logo"></i></a></span>
+    </div>
+  </div>
 
-<script src="{{root}}assets/js/app.js"></script>
+  <div data-sticky-container id="responsive-menu">
+    <div class="top-bar-container sticky sticky-topbar" data-sticky
+      data-options="anchor: page; marginTop: 0; stickyOn: small;">
+      <div class="grid-container">
+        <div class="top-bar">
+
+          <div class="top-bar-left">
+            <div class="site-title align-center large-align-left">{{ site.slogan }}</div>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu menu-hover-lines align-center large-align-right">
+              {{#each menu}}
+              <li{{#ifpage alias}} class="active" {{/ifpage}}><a href="{{ href }}">{{ text }}</a></li>
+                {{/each}}
+            </ul>
+            <!--ul class="menu">
+          <li><input type="search" placeholder="Пошук"></li>
+          <li><button type="button" class="button">Шукати</button></li>
+        </ul-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+
+    <!-- Close button -->
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <!-- Menu -->
+    <ul class="vertical menu">
+      <li><a href="#">Foundation</a></li>
+      <li><a href="#">Dot</a></li>
+      <li><a href="#">ZURB</a></li>
+      <li><a href="#">Com</a></li>
+      <li><a href="#">Slash</a></li>
+      <li><a href="#">Sites</a></li>
+    </ul>
+
+  </div>
+
+  <div class="off-canvas-content" data-off-canvas-content>
+    <!-- Your page content lives here -->
+    {{> body}}
+
+  </div>
+
+
+
+  <footer>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-y align-middle flex-dir-column-reverse large-flex-dir-row">
+        <div class="cell large-3 text-center medium-text-center large-text-left copy">&copy; {{ site.name }} 2022</div>
+        <div class="cell large-9 show-for-large">
+          <ul class="vertical medium-horizontal menu align-right">
+            {{#each menu}}
+            <li{{#ifpage alias}} class="active" {{/ifpage}}><a href="{{ href }}">{{ text }}</a></li>
+              {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{root}}assets/js/app.js"></script>
 </body>
+
 </html>

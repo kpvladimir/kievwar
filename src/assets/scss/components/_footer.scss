@@ -1,0 +1,38 @@
+footer{
+    
+    background-color: map-get($sc, dark);
+    margin-top: 40px;
+
+    .copy{
+        color: map-get($sc, silver);
+        font-size: $small-font-size;
+    }
+
+    .menu{
+
+        a{
+            color: $white;
+            font-weight: 600;
+
+            &:hover{
+                color: map-get($sc, orange);
+            }
+
+        }
+
+        .active{
+            
+            a{
+                color: map-get($sc, orange);
+                background-color: transparent;
+
+                &:hover{
+                    color: map-get($sc, orange);
+                }
+
+            }
+        }
+        
+    }
+
+}

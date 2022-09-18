@@ -1,0 +1,63 @@
+---
+title: Події
+---
+{{> pagetitle}}
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+        <div class="large-3 cell">
+            <img src="{{root}}assets/img/aerial-view-city-fog.jpg" class="show-for-large">
+            <img src="{{root}}assets/img/aerial-view-city-fog-mob.jpg" class="hide-for-large">
+        </div>
+        <div class="large-9 cell">
+
+            {{#each video}}
+            <div class="mTitle">{{m}}</div>
+            {{#each dataM}}
+
+            <div class="dCont">
+                <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
+                    <div class="dTitleText">{{d}}</div>
+                    <div class="arrowButton">
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler=".expanded">
+
+                    {{#each ../../data}}
+                    {{#ifequal type 'action'}}
+
+                    {{#each rows}}
+                    <div class="actionCont">
+                        <div class="actionsTitle"
+                            data-toggle="action-{{@index}}{{@../index}}{{@../../index}}{{@../../../index}}">
+                            <div class="dateCont forTime">{{ time }}</div>
+                            <div class="actionTitleText">{{ title }}</div>
+                            <div class="actionButton">
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                        <div class="actionTextCont"
+                            id="action-{{@index}}{{@../index}}{{@../../index}}{{@../../../index}}"
+                            data-toggler=".expanded">
+                            <div class="content">
+                                {{ text }}
+                            </div>
+                            <a href="{{ link }}" target="_blank" class="text-right ext-link">Джерело</a>
+                        </div>
+                    </div>
+                    {{/each}}
+
+                    {{/ifequal}}
+                    {{/each}}
+
+
+                </div>
+            </div>
+
+            {{/each}}
+            {{/each}}
+
+
+        </div>
+    </div>
+</div>
