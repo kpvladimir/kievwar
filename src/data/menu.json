@@ -6,37 +6,37 @@
     },
     {
         "text":"Події",
-        "href": "/actions.html",
+        "href": "actions.html",
         "alias": "actions"
     },
     {
         "text":"Ситуація",
-        "href": "/situation.html",
+        "href": "situation.html",
         "alias": "situation"
     },
     {
         "text":"Історії",
-        "href": "/history.html",
+        "href": "history.html",
         "alias": "history"
     },
     {
         "text":"Мапи",
-        "href": "/maps.html",
+        "href": "maps.html",
         "alias": "maps"
     },
     {
         "text":"Фото",
-        "href": "/photo.html",
+        "href": "photo.html",
         "alias": "photo"
     },
     {
         "text":"Відео",
-        "href": "/video.html",
+        "href": "video.html",
         "alias": "video"
     },
     {
         "text":"Про проект",
-        "href": "/about.html",
+        "href": "about.html",
         "alias": "about"
     }
 ]
