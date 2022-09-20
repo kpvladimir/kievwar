@@ -21,8 +21,6 @@
         padding-left: 5%;
     }
 
-
-
     .sourceCont{
         padding-top: 5px;
         margin-bottom: 5px;
@@ -78,16 +76,10 @@
         }    
         
         .sourceDataCont{
-            height: 0;
             overflow: hidden;
             padding-left: 5%;
-
-            &.expanded{
-                height: auto;
-                padding-top: 10px;
-                padding-bottom: 5px;
-            }
-
+            padding-top: 10px;
+            padding-bottom: 5px;
         }
 
     }
@@ -157,10 +149,6 @@
 .actionCont{
     padding-top: 5px;
     margin-bottom: 5px;
-    border-width: 1px 0 0 0;
-    border-color: map-get($sc, haki-dark);
-    border-style: dotted;
-    
 
     .actionsTitle{
         display: flex;
@@ -169,48 +157,22 @@
         padding: 5px 0;
 
         &:hover{
-            background-color: map-get($sc, haki-light);
-        }
-
-        .actionTime{
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: map-get($sc, boloto);
-            width: 55px;
+            color: $blue;
         }
 
         .actionTitleText{
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 500;
+            font-size: 1rem;
             flex: 1;
         }
 
-        .actionButton{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 36px;
-
-            div{
-                cursor: pointer;
-            }
-
-        }
     }    
     
     .actionTextCont{
         display: flex;
         flex-direction: column;
-        height: 0;
         overflow: hidden;
-        padding: 0 30px 0 70px;
-
-        &.expanded{
-            height: auto;
-            padding-top: 10px;
-            padding-bottom: 5px;
-        }
-
+        padding: 10px 30px 5px 70px;
     }
 
 }
@@ -495,20 +457,80 @@
     align-items: center;
     width: 24px;
     height: 24px;
-    color: map-get($sc, boloto);
-    border: 3px solid map-get($sc, boloto);
-    border-radius: 50%;
+    color: $dark-bg;
+    border: 2px solid $dark-bg;
+    border-radius: 50%; 
     cursor: pointer;
     font-weight: 700;
     font-size: 1.1rem;
     text-align: center;
+    transition: all 0.5s ease-in;
 
     span{
         cursor: pointer;
     } 
 
     &:hover{
-        background-color: map-get($sc, boloto);
+        background-color: $dark-bg;
         color: $white;
     }
+}
+
+
+.buttonPM{
+    
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    div{
+        background-color: $blue;
+        border-radius: 5px;
+        width: 24px;
+        height: 24px;
+        position: relative;
+
+        &:before,
+        &:after{
+            content: "";
+            position: absolute;
+            background-color: white;
+            transition: transform 0.1s ease-out;
+        }
+
+        &:before{
+            top: 4px;
+            left: 50%;
+            width: 2px;
+            height: 16px;
+            margin-left: -1px;
+        }
+
+        &:after{
+            top: 50%;
+            left: 4px;
+            width: 16px;
+            height: 2px;
+            margin-top: -1px;
+        }
+        
+        /*
+        &:hover{
+            cursor: pointer;
+            &:before{ transform: rotate(90deg); }
+            &:after{ transform: rotate(180deg); }
+        }
+        */
+    }
+}
+
+[aria-expanded="true"]{
+
+    .buttonPM div{
+        &:before{ transform: rotate(90deg); }
+        &:after{ transform: rotate(180deg); }
+    }
+
 }

@@ -1,3 +1,53 @@
+.banner {
+    background: transparent url(../img/top-banner.jpg) left center no-repeat;
+    background-size: cover;
+    height: 240px;
+    width: 100%;
+
+  .ban_title {
+      float: none;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 0 25px #000, 0 0 25px #000, 0 0 25px #000;
+      padding-right: 0;
+      padding-top: 20px;
+
+      div {
+          width: 100%;
+          white-space: nowrap;
+      }
+
+      .title1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 60px;
+    margin-bottom: 8px;
+}
+
+.title2 {
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 33px;
+}
+
+.title3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+
+.title4 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+  }
+
+}
+
 .top-bar-container, .title-bar{
     background-color: $black;
 }
@@ -44,11 +94,11 @@
   li.active::before {
       content: '';
       position: absolute;
-      top: -12px;
+      top: -8px;
       left: 0;
       right: 0;
       width: 100%;
-      height: 10px;
+      height: 6px;
       background-color: $blue;
   }
 

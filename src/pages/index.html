@@ -20,11 +20,12 @@ title: Проект "Оборона Києва"
             <div class="actionsTitle" data-toggle="action-{{@index}}">
               <div class="dateCont forTime">{{ time }}</div>
               <div class="actionTitleText">{{ title }}</div>
-              <div class="actionButton">
-
+              <div class="buttonPM">
+                <div></div>
               </div>
             </div>
-            <div class="actionTextCont" id="action-{{@index}}" data-toggler=".expanded">
+            <div class="actionTextCont" id="action-{{@index}}" data-toggler data-animate="fade-in fade-out"
+              style="display:none">
               <div class="content">
                 {{ text }}
               </div>
@@ -41,12 +42,16 @@ title: Проект "Оборона Києва"
           <div class="sourceCont">
             <div class="sourceTitle" data-toggle="source-{{@index}}">
               <div class="sourceTitleText"><span>{{@index}}.</span> {{ name }}</div>
-              <div class="pmButton"></div>
-              <div class="sourceInfo">
-                <div title="Інформація">i</div>
+              <div class="buttonPM">
+                <div></div>
+              </div>
+              <div class="infoLink" data-tooltip
+                title="Цей Один у Київ архітектури з глибоко складова. в як операх з як найстаріших в далекого Київська з мистецтво далекого в оспівується багато">
+                <div>i</div>
               </div>
             </div>
-            <div class="sourceDataCont" id="source-{{@index}}" data-toggler=".expanded">
+            <div class="sourceDataCont" id="source-{{@index}}" data-toggler data-animate="fade-in fade-out"
+              style="display:none">
 
               {{#each rows}}
               <div class="situationCont">

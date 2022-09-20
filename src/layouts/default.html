@@ -24,16 +24,31 @@
     </div>
   </div>
 
+  <header>
+
+    <div class="banner">
+      <div class="container">
+        <div class="ban_title">
+          <div class="title1">{{ site.slogan }}</div>
+          <div class="title2">події, ситуації, історії</div>
+          <div class="title3">Звіти і матеріали</div>
+          <div class="title4">Електронний збірник</div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
   <div data-sticky-container id="responsive-menu">
     <div class="top-bar-container sticky sticky-topbar" data-sticky
-      data-options="anchor: page; marginTop: 0; stickyOn: small;">
+      data-options="anchor: page; marginTop: 0; stickyOn: small;" data-top-anchor="240">
       <div class="grid-container">
         <div class="top-bar">
 
-          <div class="top-bar-left">
+          <!--div class="top-bar-left">
             <div class="site-title align-center large-align-left">{{ site.slogan }}</div>
-          </div>
-          <div class="top-bar-right">
+          </div-->
+          <div class="top-bar-left">
             <ul class="menu menu-top align-center large-align-right">
               {{#each menu}}
               <li{{#ifpage alias}} class="active" {{/ifpage}}><a href="{{ href }}">{{ text }}</a></li>
