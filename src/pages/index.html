@@ -21,7 +21,7 @@ title: Проект "Оборона Києва"
               <div class="dateCont forTime">{{ time }}</div>
               <div class="actionTitleText">{{ title }}</div>
               <div class="actionButton">
-                <div class="arrow-down"></div>
+
               </div>
             </div>
             <div class="actionTextCont" id="action-{{@index}}" data-toggler=".expanded">
@@ -40,12 +40,10 @@ title: Проект "Оборона Києва"
           {{#each sources}}
           <div class="sourceCont">
             <div class="sourceTitle" data-toggle="source-{{@index}}">
-              <div class="sourceTitleText"><span>&#10022;</span> {{ name }}</div>
+              <div class="sourceTitleText"><span>{{@index}}.</span> {{ name }}</div>
+              <div class="pmButton"></div>
               <div class="sourceInfo">
                 <div title="Інформація">i</div>
-              </div>
-              <div class="sourceButton">
-                <div class="arrow-down"></div>
               </div>
             </div>
             <div class="sourceDataCont" id="source-{{@index}}" data-toggler=".expanded">

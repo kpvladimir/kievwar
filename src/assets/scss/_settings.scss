@@ -93,14 +93,19 @@ $sc:(
   orange: #f4a460
 );
 
+$black: #000000;
+$white: #ffffff;
+$blue: #6c8ce2;
+$gray: #909090;
+$dark-gray: #646464;
+$dark-bg: #39485f;
+$blue-gray: #b5c9e7;
+
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Nunito','Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: Verdana,'Segoe UI',Tahoma,Geneva,sans-serif;
 $body-safe-padding: false;
 $body-antialiased: true;
 $global-margin: 1rem;

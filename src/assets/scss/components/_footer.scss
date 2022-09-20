@@ -1,21 +1,21 @@
 footer{
     
-    background-color: map-get($sc, dark);
+    background-color: $dark-bg;
     margin-top: 40px;
 
     .copy{
-        color: map-get($sc, silver);
+        color: $blue-gray;
         font-size: $small-font-size;
     }
 
     .menu{
 
         a{
-            color: $white;
-            font-weight: 600;
+            color: $blue-gray;
+            font-weight: 400;
 
             &:hover{
-                color: map-get($sc, orange);
+                color: $white;
             }
 
         }
@@ -23,11 +23,11 @@ footer{
         .active{
             
             a{
-                color: map-get($sc, orange);
+                color: $white;
                 background-color: transparent;
 
                 &:hover{
-                    color: map-get($sc, orange);
+                    color: $white;
                 }
 
             }

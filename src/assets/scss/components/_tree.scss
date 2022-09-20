@@ -13,7 +13,7 @@
         text-transform: uppercase;
         font-size: 1.3rem;
         font-weight: 700;
-        color: map-get($sc, haki-dark);
+        color: $black;
         margin-bottom: 20px;
     }
 
@@ -42,14 +42,8 @@
             }
 
             .sourceTitleText{
-                font-weight: 700;
                 font-size: 1.1rem;
                 text-transform: uppercase;
-                color: map-get($sc, dark);
-
-                span{
-                    color: map-get($sc, orange);
-                }
             }
 
             .sourceInfo{
@@ -444,9 +438,8 @@
 }
 
 .dateCont{
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: map-get($sc, boloto);
+    font-weight: 400;
+    font-style: italic;
     width: 55px;
 
     &.forDate{
@@ -467,6 +460,29 @@
     div{
         cursor: pointer;
     }
+}
+
+.pmButton{
+
+    width: 30px;
+    height: 30px;
+    position: relative;
+
+    &:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/plus.png);
+    transition: all .5s;
+    background-size: 80%;
+}
+
 }
 
 .sourceLink{

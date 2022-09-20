@@ -1,5 +1,5 @@
 .datesfilter{
-    background-color: map-get($sc, haki-light);
+    background-color: $dark-bg;
     padding: 10px;
 
     .mCont{
@@ -10,39 +10,31 @@
         font-weight: 700;
         font-size: 1.1rem;
         text-transform: uppercase;
-        color: map-get($sc, haki-dark);
+        color: $white;
         padding-top: 5px;
         margin-bottom: 5px;
         border-width: 0 0 1px 0;
-        border-color: map-get($sc, haki-dark);
+        border-color: $white;
         border-style: dotted;
     }
 
     .dateDCont{
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
         padding-top: 10px;
     }
 
     .dateD{
-        background-color: map-get($sc, dark);
-        color: $white;
-        font-weight: 600;
+        color: $blue-gray;
+        font-weight: 400;
         font-size: 1.0rem;
-        width: 36px;
-        height: 36px;
         cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         &:hover{
-            background-color: map-get($sc, orange);
+            color: $white;
+            text-decoration: underline;
         }
 
         &.active{
-            background-color: map-get($sc, orange);
+            color: $white;
         }
 
     }
