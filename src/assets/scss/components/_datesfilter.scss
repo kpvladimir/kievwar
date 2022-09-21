@@ -20,6 +20,7 @@
 
     .dateDCont{
         padding-top: 10px;
+        padding-left: 10%;
     }
 
     .dateD{
@@ -27,6 +28,14 @@
         font-weight: 400;
         font-size: 1.0rem;
         cursor: pointer;
+
+        span{
+           font-weight: 600;
+           display: inline-block;
+           width: 24px;
+           text-align: right;
+           font-size: 15px;
+        }
 
         &:hover{
             color: $white;

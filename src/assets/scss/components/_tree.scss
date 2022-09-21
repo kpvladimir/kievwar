@@ -1,3 +1,18 @@
+.filterStatus{
+    margin-bottom: 20px;
+
+    .m{
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $dark-gray;
+    }
+
+    .d{
+        font-size: 1.2rem;
+    }
+}
+
 .ext-link{
     background-image: url('../img/ext-link.svg');
     background-repeat: no-repeat;
@@ -27,10 +42,17 @@
 
         .sourceTitle{
             display: flex;
-            justify-content: start;
+            justify-content: space-between;
             gap: 15px;
             cursor: pointer;
             padding: 5px 0;
+
+            .buttonCont{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 15px;
+            }
 
             .sourceNumber{
                 font-size: 1.2rem;
@@ -87,44 +109,17 @@
     .situationCont{
         padding-top: 5px;
         margin-bottom: 5px;
+        /*
         border-width: 1px 0 0 0;
         border-color: map-get($sc, haki-dark);
         border-style: dotted;
+        */
 
         .situationTitle{
             display: flex;
             gap: 15px;
             cursor: pointer;
             padding: 5px 0;
-
-            &:hover{
-                background-color: map-get($sc, haki-light);
-            }
-
-            .situationDate{
-                font-size: 1.2rem;
-                font-weight: 700;
-                color: map-get($sc, boloto);
-                width: 106px;
-            }
-
-            .situationTitleText{
-                font-weight: 600;
-                font-size: 1.1rem;
-                flex: 1;
-            }
-
-            .situationButton{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 36px;
-
-                div{
-                    cursor: pointer;
-                }
-
-            }
         }    
         
         .situationTextCont{
@@ -133,13 +128,6 @@
             height: 0;
             overflow: hidden;
             gap: 15px;
-
-            &.expanded{
-                height: auto;
-                padding-top: 10px;
-                padding-bottom: 5px;
-            }
-
         }
 
     }
@@ -256,6 +244,83 @@
     }
 
 }
+
+.imageDataCont{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    .imageItem{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+
+        .date{
+            text-align: center;
+            color: #000;
+        }
+
+        .title{
+            text-align: center;
+        }
+
+    }
+
+    .imageCont{
+        background-color: $dark-bg;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 300px;
+        height: 300px;
+        border-radius: 7px;
+        position: relative;
+        margin-bottom: 15px;
+        transition: all .5s;   
+
+        &:before {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #000;
+            opacity: .2;
+            border-radius: 7px;
+        }
+
+        &:after {
+            content: ' ';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 53px;
+            height: 53px;
+            background-color: transparent;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url(../img/photo_icon.png);
+            transition: all .5s;
+        }
+
+    }    
+
+    .imageItem{
+
+        &:hover{
+            .imageCont{
+                background-size: 110%;
+            }
+        }
+
+    }
+
+}
+
+
+
+
 
 .thumbnailForMap{
     margin-bottom: 0;
@@ -411,6 +476,17 @@
     &.forTime{
         width: 55px;
     }
+}
+
+.itemTitleText{
+    font-weight: 500;
+    font-size: 1rem;
+    color: $blue;
+
+    &:hover{
+        text-decoration: underline;
+    }
+
 }
 
 .arrowButton{

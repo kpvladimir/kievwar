@@ -8,9 +8,16 @@ title: Проект "Оборона Києва"
       {{> datefilter}}
     </div>
     <div class="large-9 cell">
+
+      <div class="filterStatus">
+        <div class="m">Лютий</div>
+        <div class="d">24 лютого</div>
+      </div>
+
       {{#each data}}
       <div class="docContainer">
         <div class="docTitle">{{ title }}</div>
+
         <div class="docData">
 
           {{#ifequal type 'action'}}
@@ -42,12 +49,14 @@ title: Проект "Оборона Києва"
           <div class="sourceCont">
             <div class="sourceTitle" data-toggle="source-{{@index}}">
               <div class="sourceTitleText"><span>{{@index}}.</span> {{ name }}</div>
-              <div class="buttonPM">
-                <div></div>
-              </div>
-              <div class="infoLink" data-tooltip
-                title="Цей Один у Київ архітектури з глибоко складова. в як операх з як найстаріших в далекого Київська з мистецтво далекого в оспівується багато">
-                <div>i</div>
+              <div class="buttonCont">
+                <div class="infoLink" data-tooltip
+                  title="Цей Один у Київ архітектури з глибоко складова. в як операх з як найстаріших в далекого Київська з мистецтво далекого в оспівується багато">
+                  <div>i</div>
+                </div>
+                <div class="buttonPM">
+                  <div></div>
+                </div>
               </div>
             </div>
             <div class="sourceDataCont" id="source-{{@index}}" data-toggler data-animate="fade-in fade-out"
@@ -55,19 +64,16 @@ title: Проект "Оборона Києва"
 
               {{#each rows}}
               <div class="situationCont">
-                <div class="situationTitle" data-toggle="situation-{{@../index}}{{@index}}">
-                  <div class="dateCont forDate">{{ date }}</div>
-                  <div class="situationTitleText">{{ title }}</div>
-                  <div class="situationButton">
-                    <div class="arrow-down"></div>
-                  </div>
+                <div class="situationTitle" data-toggle1="situation-{{@../index}}{{@index}}">
+                  <!--div class="dateCont forDate">{{ date }}</div-->
+                  <div class="itemTitleText">{{ title }}</div>
                 </div>
-                <div class="situationTextCont" id="situation-{{@../index}}{{@index}}" data-toggler=".expanded">
+                <!--div class="situationTextCont" id="situation-{{@../index}}{{@index}}" data-toggler=".expanded">
                   <div class="content">
                     {{ text }}
                   </div>
                   <a href="{{ link }}" target="_blank" class="text-right ext-link">Джерело ({{ ../name }})</a>
-                </div>
+                </div-->
               </div>
               {{/each}}
 
@@ -79,7 +85,25 @@ title: Проект "Оборона Києва"
 
           {{#ifequal type 'history'}}
           {{#each rows}}
-          {{ title }}
+          <div class="actionCont">
+            <div class="actionsTitle" data-toggle1="action-{{@index}}">
+
+              <a href="{{link}}" target="_blank" class="ext-link">{{ title }}</a>
+
+              <!--div class="dateCont forTime">{{ time }}</div-->
+              <!--div class="actionTitleText">{{ title }}</div-->
+              <!--div class="buttonPM">
+                <div></div>
+              </div-->
+            </div>
+            <!--div class="actionTextCont" id="action-{{@index}}" data-toggler data-animate="fade-in fade-out"
+              style="display:none">
+              <div class="content">
+                {{ text }}
+              </div>
+              <a href="{{ link }}" target="_blank" class="text-right ext-link">Джерело</a>
+            </div-->
+          </div>
           {{/each}}
           {{/ifequal}}
 
@@ -87,26 +111,39 @@ title: Проект "Оборона Києва"
           {{#each sources}}
           <div class="sourceCont">
             <div class="sourceTitle" data-toggle="sourceMap-{{@index}}">
-              <div class="sourceTitleText"><span>&#10022;</span> {{ name }}</div>
-              <div class="sourceInfo">
-                <div title="Інформація">i</div>
-              </div>
-              <div class="sourceButton">
-                <div class="arrow-down"></div>
+              <div class="sourceTitleText"><span>{{@index}}.</span> {{ name }}</div>
+              <div class="buttonCont">
+                <div class="infoLink" data-tooltip
+                  title="Цей Один у Київ архітектури з глибоко складова. в як операх з як найстаріших в далекого Київська з мистецтво далекого в оспівується багато">
+                  <div>i</div>
+                </div>
+                <div class="buttonPM">
+                  <div></div>
+                </div>
               </div>
             </div>
-            <div class="sourceDataCont" id="sourceMap-{{@index}}" data-toggler=".expanded">
+            <div class="imageDataCont" id="sourceMap-{{@index}}" data-toggler data-animate="fade-in fade-out"
+              style="display:none">
 
               {{#each rows}}
-              <div class="photoCont">
+
+              <div class="imageItem">
+                <a href="#" class="viewPopup">
+                  <div class="imageCont" style="background-image: url('assets/img/{{ image }}')">
+                    <img src="/data/253/appendix1_preview.jpg" style="display:none;">
+                  </div>
+                  <div class="date">{{ date }}</div>
+                  <div class="title">{{ title }}</div>
+                </a>
+              </div>
+
+              <!--div class="photoCont">
                 <div class="photoTitle" data-toggle="photoM-{{@../index}}{{@index}}">
                   <div class="dateCont forDate">{{ date }}</div>
                   <div class="photoTitleText">{{ title }}</div>
-                  <div class="photoButton">
-                    <div class="arrow-down"></div>
-                  </div>
                 </div>
-                <div class="photoTextCont" id="photoM-{{@../index}}{{@index}}" data-toggler=".expanded">
+                <div class="photoTextCont" id="photoM-{{@../index}}{{@index}}" data-toggler
+                  data-animate="fade-in fade-out" style="display:none">
                   <div class="imageCont">
                     <a href="{{ link }}" target="_blank" class="thumbnail thumbnailForMap">
                       <img src="assets/img/{{ image }}">
@@ -128,7 +165,7 @@ title: Проект "Оборона Києва"
                     </div>
                   </div>
                 </div>
-              </div>
+              </div-->
               {{/each}}
 
             </div>
@@ -137,8 +174,24 @@ title: Проект "Оборона Києва"
           {{/ifequal}}
 
           {{#ifequal type 'photo'}}
+
+          <div class="imageDataCont">
+            {{#each rows}}
+
+            <div class="imageItem">
+              <a href="{{ link }}" target="_blank">
+                <div class="imageCont" style="background-image: url('assets/img/{{ image }}')">
+                </div>
+                <div class="date">{{ date }}</div>
+                <div class="title">{{ title }}</div>
+              </a>
+            </div>
+
+            {{/each}}
+          </div>
+
           {{#each rows}}
-          <div class="photoCont">
+          <!--div class="photoCont">
             <div class="photoTitle" data-toggle="photo-{{@index}}">
               <div class="dateCont forDate">{{ date }}</div>
               <div class="photoTitleText">{{ title }}</div>
@@ -168,13 +221,29 @@ title: Проект "Оборона Києва"
                 </div>
               </div>
             </div>
-          </div>
+          </div-->
           {{/each}}
           {{/ifequal}}
 
           {{#ifequal type 'video'}}
+
+          <div class="imageDataCont">
+            {{#each rows}}
+
+            <div class="imageItem">
+              <a href="{{ link }}" target="_blank">
+                <div class="imageCont" style="background-image: url('assets/img/{{ image }}')">
+                </div>
+                <div class="date">{{ date }}</div>
+                <div class="title">{{ title }}</div>
+              </a>
+            </div>
+
+            {{/each}}
+          </div>
+
           {{#each rows}}
-          <div class="videoCont">
+          <!--div class="videoCont">
             <div class="videoTitle" data-toggle="video-{{@index}}">
               <div class="dateCont forDate">{{ date }}</div>
               <div class="videoTitleText">{{ title }}</div>
@@ -212,7 +281,7 @@ title: Проект "Оборона Києва"
             <button class="close-button" data-close aria-label="Close modal" type="button">
               <span aria-hidden="true">&times;</span>
             </button>
-          </div>
+          </div-->
 
           {{/each}}
           {{/ifequal}}

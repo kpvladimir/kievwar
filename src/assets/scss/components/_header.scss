@@ -1,32 +1,27 @@
-.banner {
+header {
     background: transparent url(../img/top-banner.jpg) left center no-repeat;
     background-size: cover;
     height: 240px;
     width: 100%;
 
   .ban_title {
-      float: none;
-      width: 100%;
       text-align: center;
-      color: #fff;
+      color: $white;
       text-shadow: 0 0 25px #000, 0 0 25px #000, 0 0 25px #000;
-      padding-right: 0;
-      padding-top: 20px;
 
       div {
           width: 100%;
-          white-space: nowrap;
       }
 
       .title1 {
-    font-size: 44px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 60px;
     margin-bottom: 8px;
 }
 
 .title2 {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 31px;
     margin-bottom: 33px;
 }
