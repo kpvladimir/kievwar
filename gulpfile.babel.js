@@ -46,10 +46,20 @@ gulp.task('default',
   gulp.series('build', server, watch)
 );
 
+gulp.task('docs',
+  gulp.series(makeDocsFolder)
+);
+
 // Delete the "dist" folder
 // This happens every time a build starts
 function clean(done) {
   rimraf(PATHS.dist, done);
+  rimraf(PATHS.docs, done);
+}
+
+function makeDocsFolder(done) {
+  return gulp.src(PATHS.dist+'/**/*')
+    .pipe(gulp.dest(PATHS.docs));
 }
 
 // Copy files out of the assets folder
