@@ -1,17 +1,18 @@
 .filterSource{
-    background-color: map-get($sc, haki-light);
+    background-color: $hover-bg;
+    border-radius: 5px;
     padding: 10px;
 
     li{
         
         a{
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1rem;
             text-transform: uppercase;
-            color: map-get($sc, dark);
+            color: $black;
 
             &:hover{
-                color: map-get($sc, orange);
+                color: $blue;
             }
 
         }
@@ -22,11 +23,11 @@
     .active{
             
         a{
-            color: map-get($sc, orange);
+            color: $orange;
             background-color: transparent;
 
             &:hover{
-                color: map-get($sc, orange);
+                color: $orange;
             }
 
         }

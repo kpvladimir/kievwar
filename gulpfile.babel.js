@@ -38,7 +38,7 @@ console.log(UNCSS_OPTIONS);
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
-  gulp.series(clean, gulp.parallel(pages, javascript, images, copy), sassBuild, styleGuide)
+  gulp.series(clean, gulp.parallel(pages, javascript, images), sassBuild, styleGuide)
 );
 
 // Build the site, run the server, and watch for file changes
@@ -46,15 +46,17 @@ gulp.task('default',
   gulp.series('build', server, watch)
 );
 
+/*
 gulp.task('docs',
-  gulp.series(makeDocsFolder)
+  rimraf(PATHS.docs, done);
+  gulp.series(makeDocsFolder);
 );
+*/
 
 // Delete the "dist" folder
 // This happens every time a build starts
 function clean(done) {
   rimraf(PATHS.dist, done);
-  rimraf(PATHS.docs, done);
 }
 
 function makeDocsFolder(done) {

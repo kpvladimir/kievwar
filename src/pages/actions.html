@@ -1,5 +1,6 @@
 ---
 title: Події
+page: actions
 ---
 {{> pagetitle}}
 <div class="grid-container">
@@ -11,51 +12,55 @@ title: Події
         <div class="large-9 cell">
 
             {{#each video}}
-            <div class="mTitle">{{m}}</div>
-            {{#each dataM}}
+            <div class="docContainer">
+                <div class="docTitle">{{m}}</div>
+                <div class="docData">
 
-            <div class="dCont">
-                <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
-                    <div class="dTitleText">{{d}}</div>
-                    <div class="arrowButton">
-                        <div class="arrow-down"></div>
-                    </div>
-                </div>
-                <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler=".expanded">
+                    {{#each dataM}}
 
-                    {{#each ../../data}}
-                    {{#ifequal type 'action'}}
-
-                    {{#each rows}}
-                    <div class="actionCont">
-                        <div class="actionsTitle"
-                            data-toggle="action-{{@index}}{{@../index}}{{@../../index}}{{@../../../index}}">
-                            <div class="dateCont forTime">{{ time }}</div>
-                            <div class="actionTitleText">{{ title }}</div>
-                            <div class="actionButton">
-                                <div class="arrow-down"></div>
+                    <div class="dCont">
+                        <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
+                            <div class="dTitleText">{{d}}</div>
+                            <div class="buttonPM">
+                                <div></div>
                             </div>
                         </div>
-                        <div class="actionTextCont"
-                            id="action-{{@index}}{{@../index}}{{@../../index}}{{@../../../index}}"
-                            data-toggler=".expanded">
-                            <div class="content">
-                                {{ text }}
+                        <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler
+                            data-animate="fade-in fade-out" style="display:none">
+
+                            {{#each ../../data}}
+                            {{#ifequal type 'action'}}
+                            {{#each rows}}
+                            <div class="actionBlock">
+                                <div class="actionHeader">
+                                    <span class="actionTime">{{ time }}</span>
+                                    <span class="actionTitle">{{ title }}</span>
+                                </div>
+                                <div class="actionTextCont">
+                                    <a href="{{ link }}" target="_blank" class="text-right ext-link">
+                                        Джерело<svg>
+                                            <use xlink:href="#share"></use>
+                                        </svg>
+                                    </a>
+                                    <div class="content">
+                                        {{ text }}
+                                    </div>
+                                </div>
                             </div>
-                            <a href="{{ link }}" target="_blank" class="text-right ext-link">Джерело</a>
+                            {{/each}}
+                            {{/ifequal}}
+                            {{/each}}
+
+
                         </div>
                     </div>
-                    {{/each}}
 
-                    {{/ifequal}}
                     {{/each}}
-
 
                 </div>
             </div>
+            {{/each}}
 
-            {{/each}}
-            {{/each}}
 
 
         </div>

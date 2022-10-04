@@ -10,24 +10,110 @@ title: Мапи
         <div class="large-9 cell">
 
             {{#each video}}
-            <div class="mTitle">{{m}}</div>
-            {{#each dataM}}
+            <div class="docContainer">
+                <div class="docTitle">{{m}}</div>
+                <div class="docData">
+                    {{#each dataM}}
 
-            <div class="dCont">
-                <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
-                    <div class="dTitleText">{{d}}</div>
-                    <div class="arrowButton">
-                        <div class="arrow-down"></div>
-                    </div>
+                    <div class="dCont">
+                        <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
+                            <div class="dTitleText">{{d}}</div>
+                            <div class="buttonPM">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler
+                            data-animate="fade-in fade-out" style="display:none">
+
+                            {{#each ../../data}}
+                            {{#ifequal type 'maps'}}
+
+                            {{#each sources}}
+                            <div class="sourceCont">
+                                <div class="sourceTitle">
+                                    <div class="infoLink" data-tooltip
+                                        title="Цей Один у Київ архітектури з глибоко складова. в як операх з як найстаріших в далекого Київська з мистецтво далекого в оспівується багато">
+                                        <svg class="icon">
+                                            <use xlink:href="#info"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="sourceLinkTree" data-toggle="sourceMap-{{@index}}">
+                                        <div class="sourceTitleText">{{ name }}</div>
+                                        <div class="buttonCont">
+
+                                            <div class="buttonPM">
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="imageDataCont" id="sourceMap-{{@index}}" data-toggler
+                                    data-animate="fade-in fade-out" style="display:none">
+
+                                    {{#each rows}}
+
+                                    <div class="imageItem">
+                                        <a href="#" class="viewPopup">
+                                            <div class="imageCont"
+                                                style="background-image: url('assets/img/{{ image }}')">
+                                                <img src="/data/253/appendix1_preview.jpg" style="display:none;">
+                                                <div class="roundIcon forMap">
+                                                    <svg>
+                                                        <use xlink:href="#map"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="title">{{ title }}</div>
+                                        </a>
+                                    </div>
+
+                                    <!--div class="photoCont">
+                <div class="photoTitle" data-toggle="photoM-{{@../index}}{{@index}}">
+                  <div class="dateCont forDate">{{ date }}</div>
+                  <div class="photoTitleText">{{ title }}</div>
                 </div>
-                <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler=".expanded">
+                <div class="photoTextCont" id="photoM-{{@../index}}{{@index}}" data-toggler
+                  data-animate="fade-in fade-out" style="display:none">
+                  <div class="imageCont">
+                    <a href="{{ link }}" target="_blank" class="thumbnail thumbnailForMap">
+                      <img src="assets/img/{{ image }}">
+                    </a>
+                  </div>
+                  <div class="contentPhoto padding-right-2">
+                    <div class="content">
+                      <p>{{ text }}</p>
+                      <a href="{{ link }}" target="_blank" class="text-right ext-link">Дивитись мапу</a>
+                    </div>
+                    <div class="grid-x align-middle align-justify">
+                      <div class="sourceLink">
+                        <b>Джерело:</b> {{source}} <a href="" data-source="{{source}}" class="infoLink"
+                          title="Інформація про джерело"><span>i</span></a>
+                      </div>
+                      <div class="sourceLink">
+                        <b>Автор:</b> {{avtor}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div-->
+                                    {{/each}}
 
+                                </div>
+                            </div>
+                            {{/each}}
 
+                            {{/ifequal}}
+                            {{/each}}
+
+                        </div>
+                    </div>
+
+                    {{/each}}
 
                 </div>
             </div>
 
-            {{/each}}
             {{/each}}
 
         </div>

@@ -15,14 +15,14 @@
         "alias": "situation"
     },
     {
-        "text":"Історії",
-        "href": "history.html",
-        "alias": "history"
-    },
-    {
         "text":"Мапи",
         "href": "maps.html",
         "alias": "maps"
+    },
+    {
+        "text":"Історії",
+        "href": "history.html",
+        "alias": "history"
     },
     {
         "text":"Фото",

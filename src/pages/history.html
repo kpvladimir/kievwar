@@ -1,33 +1,85 @@
 ---
 title: Історії
+page: history
 ---
 {{> pagetitle}}
 <div class="grid-container">
     <div class="grid-x grid-padding-x">
         <div class="large-3 cell">
-            {{> sources}}
+            <img src="{{root}}assets/img/aerial-view-city-fog.jpg" class="show-for-large">
+            <img src="{{root}}assets/img/aerial-view-city-fog-mob.jpg" class="hide-for-large">
         </div>
         <div class="large-9 cell">
 
             {{#each video}}
-            <div class="mTitle">{{m}}</div>
-            {{#each dataM}}
+            <div class="docContainer">
+                <div class="docTitle">{{m}}</div>
+                <div class="docData">
+                    {{#each dataM}}
 
-            <div class="dCont">
-                <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
-                    <div class="dTitleText">{{d}}</div>
-                    <div class="arrowButton">
-                        <div class="arrow-down"></div>
+                    <div class="dCont">
+                        <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
+                            <div class="dTitleText">{{d}}</div>
+                            <div class="buttonPM">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler
+                            data-animate="fade-in fade-out" style="display:none">
+
+                            {{#each ../../data}}
+                            {{#ifequal type 'history'}}
+
+                            {{#each rows}}
+                            <div class="actionCont">
+                                <div class="actionsTitle" data-open="history-{{@index}}">
+                                    {{ title }}
+                                </div>
+                            </div>
+
+                            <div class="reveal small" id="history-{{@index}}" data-reveal>
+
+                                <div class="grid-container" style="max-width: 680px;">
+                                    <div class="grid-x grid-padding-x">
+                                        <div class="large-12 cell">
+
+                                            <div class="revealTitle">{{ title }}</div>
+                                            <div class="historyInfo">
+                                                <span class="date">{{date}}</span>
+                                                <a href="{{ link }}" target="_blank" class="ext-link">Джерело<svg>
+                                                        <use xlink:href="#share"></use>
+                                                    </svg></a>
+                                            </div>
+                                            <div class="content">
+
+                                                {{> post_text}}
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <button class="close-button" data-close aria-label="Close modal" type="button">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            {{/each}}
+
+                            {{/ifequal}}
+                            {{/each}}
+
+                        </div>
                     </div>
-                </div>
-                <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler=".expanded">
 
-
+                    {{/each}}
 
                 </div>
             </div>
 
-            {{/each}}
             {{/each}}
 
         </div>

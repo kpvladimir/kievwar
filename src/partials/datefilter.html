@@ -1,11 +1,17 @@
 <div class="datesfilter">
     {{#each dates}}
     <div class="mCont">
-        <div class="dateM">{{ m }}</div>
-        <div class="dateDCont">
+        <div class="dateMCont" data-toggle="df-{{@index}}" aria-expanded="true">
+            <div class="dateM">{{ m }}</div>
+            <div class="arrowButton">
+                <div class="arrow-down"></div>
+            </div>
+        </div>
+        <div class="dateDCont" id="df-{{@index}}" data-toggler data-animate="fade-in fade-out"
+            {{#ifequal @index 0}}style="display:block" {{else}}style="display:none" {{/ifequal}}>
             {{#each d}}
-            <div class="dateD">
-                <div><span>{{ this }}</span> {{../mm}}</div>
+            <div class="dateD{{#ifequal @index 0}} active{{/ifequal}}">
+                <span>{{ this }}</span> {{../mm}}
             </div>
             {{/each}}
         </div>

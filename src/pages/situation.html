@@ -9,26 +9,102 @@ title: Ситуація
         </div>
         <div class="large-9 cell">
 
+
             {{#each video}}
-            <div class="mTitle">{{m}}</div>
-            {{#each dataM}}
+            <div class="docContainer">
+                <div class="docTitle">{{m}}</div>
+                <div class="docData">
+                    {{#each dataM}}
 
-            <div class="dCont">
-                <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
-                    <div class="dTitleText">{{d}}</div>
-                    <div class="arrowButton">
-                        <div class="arrow-down"></div>
+                    <div class="dCont">
+                        <div class="dTitle" data-toggle="md-{{@index}}{{@../index}}">
+                            <div class="dTitleText">{{d}}</div>
+                            <div class="buttonPM">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler
+                            data-animate="fade-in fade-out" style="display:none">
+
+                            {{#each ../../data}}
+                            {{#ifequal type 'situation'}}
+
+                            {{#each sources}}
+                            <div class="sourceCont">
+                                <div class="sourceTitle">
+                                    <div class="infoLink" data-tooltip
+                                        title="Цей Один у Київ архітектури з глибоко складова. в як операх з як найстаріших в далекого Київська з мистецтво далекого в оспівується багато">
+                                        <svg class="icon">
+                                            <use xlink:href="#info"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="sourceLinkTree" data-toggle="source-{{@index}}">
+                                        <div class="sourceTitleText">{{ name }}</div>
+                                        <div class="buttonCont">
+                                            <div class="buttonPM">
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sourceDataCont" id="source-{{@index}}" data-toggler
+                                    data-animate="fade-in fade-out" style="display:none">
+
+                                    {{#each rows}}
+                                    <div class="situationCont">
+                                        <div class="situationTitle" data-open="situationModal-{{@../index}}{{@index}}">
+                                            <div class="itemTitleText">{{ title }}</div>
+                                        </div>
+                                        <!--div class="situationTextCont" id="situation-{{@../index}}{{@index}}" data-toggler=".expanded">
+                  <div class="content">
+                    {{ text }}
+                  </div>
+                  <a href="{{ link }}" target="_blank" class="text-right ext-link">Джерело ({{ ../name }})</a>
+                </div-->
+                                        <div class="reveal tiny" id="situationModal-{{@../index}}{{@index}}"
+                                            data-reveal>
+                                            <div class="grid-container" style="max-width: 680px;">
+                                                <div class="grid-x grid-padding-x">
+                                                    <div class="large-12 cell">
+                                                        <div class="revealTitle">{{ ../name }}</div>
+                                                        <div class="historyInfo">
+                                                            <span class="date">{{date}}</span>
+                                                            <a href="{{ link }}" target="_blank"
+                                                                class="ext-link">Джерело<svg>
+                                                                    <use xlink:href="#share"></use>
+                                                                </svg></a>
+                                                        </div>
+                                                        <div class="content">
+                                                            <p>{{ text }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="close-button" data-close aria-label="Close modal"
+                                                type="button">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+
+                                </div>
+                            </div>
+                            {{/each}}
+
+                            {{/ifequal}}
+                            {{/each}}
+
+                        </div>
                     </div>
-                </div>
-                <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler=".expanded">
 
-
+                    {{/each}}
 
                 </div>
             </div>
 
             {{/each}}
-            {{/each}}
+
 
         </div>
     </div>
