@@ -25,34 +25,35 @@ title: Фото
                                 <div></div>
                             </div>
                         </div>
-                        <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler
+                        <div class="imageDataCont" id="md-{{@index}}{{@../index}}" data-toggler
                             data-animate="fade-in fade-out" style="display:none">
 
                             {{#each ../../data}}
                             {{#ifequal type 'photo'}}
-                            <div class="imageDataCont">
-                                {{#each rows}}
 
-                                <div class="imageItem">
-                                    <a href="{{ link }}" target="_blank">
-                                        <div class="imageCont" style="background-image: url('assets/img/{{ image }}')">
-                                            <div class="roundIcon forMap">
-                                                <svg>
-                                                    <use xlink:href="#photo"></use>
-                                                </svg>
-                                            </div>
+                            {{#each rows}}
+
+                            <div class="imageItem">
+                                <a data-open="sliderModal">
+                                    <div class="imagePreviewCont">
+                                        <img src="assets/img/{{ image }}">
+                                        <div class="roundIcon forMap">
+                                            <svg>
+                                                <use xlink:href="#photo"></use>
+                                            </svg>
                                         </div>
-                                        <div class="title">{{ title }}</div>
-                                    </a>
-                                </div>
-
-                                {{/each}}
+                                    </div>
+                                    <div class="title">{{ title }}</div>
+                                </a>
                             </div>
-                            {{/ifequal}}
+
                             {{/each}}
 
-
+                            {{/ifequal}}
+                            {{/each}}
                         </div>
+
+
                     </div>
 
                     {{/each}}

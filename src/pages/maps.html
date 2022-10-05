@@ -53,11 +53,10 @@ title: Мапи
 
                                     {{#each rows}}
 
-                                    <div class="imageItem">
-                                        <a href="#" class="viewPopup">
-                                            <div class="imageCont"
-                                                style="background-image: url('assets/img/{{ image }}')">
-                                                <img src="/data/253/appendix1_preview.jpg" style="display:none;">
+                                    <div class="mapItem">
+                                        <a data-open="sliderModal">
+                                            <div class="imageMapCont">
+                                                <img src="assets/img/{{ image }}">
                                                 <div class="roundIcon forMap">
                                                     <svg>
                                                         <use xlink:href="#map"></use>
@@ -68,35 +67,6 @@ title: Мапи
                                         </a>
                                     </div>
 
-                                    <!--div class="photoCont">
-                <div class="photoTitle" data-toggle="photoM-{{@../index}}{{@index}}">
-                  <div class="dateCont forDate">{{ date }}</div>
-                  <div class="photoTitleText">{{ title }}</div>
-                </div>
-                <div class="photoTextCont" id="photoM-{{@../index}}{{@index}}" data-toggler
-                  data-animate="fade-in fade-out" style="display:none">
-                  <div class="imageCont">
-                    <a href="{{ link }}" target="_blank" class="thumbnail thumbnailForMap">
-                      <img src="assets/img/{{ image }}">
-                    </a>
-                  </div>
-                  <div class="contentPhoto padding-right-2">
-                    <div class="content">
-                      <p>{{ text }}</p>
-                      <a href="{{ link }}" target="_blank" class="text-right ext-link">Дивитись мапу</a>
-                    </div>
-                    <div class="grid-x align-middle align-justify">
-                      <div class="sourceLink">
-                        <b>Джерело:</b> {{source}} <a href="" data-source="{{source}}" class="infoLink"
-                          title="Інформація про джерело"><span>i</span></a>
-                      </div>
-                      <div class="sourceLink">
-                        <b>Автор:</b> {{avtor}}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div-->
                                     {{/each}}
 
                                 </div>

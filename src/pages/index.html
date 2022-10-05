@@ -118,7 +118,6 @@ title: Головна
             </div>
           </div>
           <div class="reveal small" id="history-{{@index}}" data-reveal>
-
             <div class="grid-container" style="max-width: 680px;">
               <div class="grid-x grid-padding-x">
                 <div class="large-12 cell">
@@ -157,23 +156,19 @@ title: Головна
               <div class="sourceLinkTree" data-toggle="sourceMap-{{@index}}">
                 <div class="sourceTitleText">{{ name }}</div>
                 <div class="buttonCont">
-
                   <div class="buttonPM">
                     <div></div>
                   </div>
                 </div>
               </div>
-
             </div>
             <div class="imageDataCont" id="sourceMap-{{@index}}" data-toggler data-animate="fade-in fade-out"
               style="display:none">
-
               {{#each rows}}
-
-              <div class="imageItem">
-                <a href="#" class="viewPopup">
-                  <div class="imageCont" style="background-image: url('assets/img/{{ image }}')">
-                    <img src="/data/253/appendix1_preview.jpg" style="display:none;">
+              <div class="mapItem">
+                <a data-open="sliderModal">
+                  <div class="imageMapCont">
+                    <img src="assets/img/{{ image }}">
                     <div class="roundIcon forMap">
                       <svg>
                         <use xlink:href="#map"></use>
@@ -183,51 +178,19 @@ title: Головна
                   <div class="title">{{ title }}</div>
                 </a>
               </div>
-
-              <!--div class="photoCont">
-                <div class="photoTitle" data-toggle="photoM-{{@../index}}{{@index}}">
-                  <div class="dateCont forDate">{{ date }}</div>
-                  <div class="photoTitleText">{{ title }}</div>
-                </div>
-                <div class="photoTextCont" id="photoM-{{@../index}}{{@index}}" data-toggler
-                  data-animate="fade-in fade-out" style="display:none">
-                  <div class="imageCont">
-                    <a href="{{ link }}" target="_blank" class="thumbnail thumbnailForMap">
-                      <img src="assets/img/{{ image }}">
-                    </a>
-                  </div>
-                  <div class="contentPhoto padding-right-2">
-                    <div class="content">
-                      <p>{{ text }}</p>
-                      <a href="{{ link }}" target="_blank" class="text-right ext-link">Дивитись мапу</a>
-                    </div>
-                    <div class="grid-x align-middle align-justify">
-                      <div class="sourceLink">
-                        <b>Джерело:</b> {{source}} <a href="" data-source="{{source}}" class="infoLink"
-                          title="Інформація про джерело"><span>i</span></a>
-                      </div>
-                      <div class="sourceLink">
-                        <b>Автор:</b> {{avtor}}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div-->
               {{/each}}
-
             </div>
           </div>
           {{/each}}
           {{/ifequal}}
 
           {{#ifequal type 'photo'}}
-
           <div class="imageDataCont">
             {{#each rows}}
-
             <div class="imageItem">
-              <a href="{{ link }}" target="_blank">
-                <div class="imageCont" style="background-image: url('assets/img/{{ image }}')">
+              <a data-open="sliderModal">
+                <div class="imagePreviewCont">
+                  <img src="assets/img/{{ image }}">
                   <div class="roundIcon forMap">
                     <svg>
                       <use xlink:href="#photo"></use>
@@ -237,52 +200,15 @@ title: Головна
                 <div class="title">{{ title }}</div>
               </a>
             </div>
-
             {{/each}}
           </div>
-
-          {{#each rows}}
-          <!--div class="photoCont">
-            <div class="photoTitle" data-toggle="photo-{{@index}}">
-              <div class="dateCont forDate">{{ date }}</div>
-              <div class="photoTitleText">{{ title }}</div>
-              <div class="photoButton">
-                <div class="arrow-down"></div>
-              </div>
-            </div>
-            <div class="photoTextCont" id="photo-{{@index}}" data-toggler=".expanded">
-              <div class="imageCont">
-                <a href="{{ link }}" target="_blank">
-                  <img src="assets/img/{{ image }}" class="thumbnail">
-                </a>
-              </div>
-              <div class="contentPhoto padding-right-2">
-                <div class="content">
-                  <p>{{ text }}</p>
-                  <a href="{{ link }}" target="_blank" class="text-right ext-link">Дивитись фото</a>
-                </div>
-                <div class="grid-x align-middle align-justify">
-                  <div class="sourceLink">
-                    <b>Джерело:</b> {{source}} <a href="" data-source="{{source}}" class="infoLink"
-                      title="Інформація про джерело"><span>i</span></a>
-                  </div>
-                  <div class="sourceLink">
-                    <b>Автор:</b> {{avtor}}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div-->
-          {{/each}}
           {{/ifequal}}
 
           {{#ifequal type 'video'}}
-
           <div class="imageDataCont">
             {{#each rows}}
-
             <div class="videoItem">
-              <a href="{{ link }}" target="_blank">
+              <a data-open="sliderModal">
                 <div class="videoImageCont">
                   <img src="assets/img/{{ image }}">
                   <div class="roundIcon forVideo">
@@ -294,11 +220,10 @@ title: Головна
                 <div class="title">{{ title }}</div>
               </a>
             </div>
-
             {{/each}}
           </div>
-
           {{/ifequal}}
+
         </div>
       </div>
       {{/each}}

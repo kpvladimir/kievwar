@@ -25,35 +25,35 @@ title: Відео
                                 <div></div>
                             </div>
                         </div>
-                        <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler
-                            data-animate="fade-in fade-out" style="display:none">
 
+                        <div class="imageDataCont" id="md-{{@index}}{{@../index}}" data-toggler
+                            data-animate="fade-in fade-out" style="display:none">
                             {{#each ../../data}}
                             {{#ifequal type 'video'}}
-                            <div class="imageDataCont">
-                                {{#each rows}}
 
-                                <div class="videoItem">
-                                    <a href="{{ link }}" target="_blank">
-                                        <div class="videoImageCont">
-                                            <img src="assets/img/{{ image }}">
-                                            <div class="roundIcon forVideo">
-                                                <svg>
-                                                    <use xlink:href="#media"></use>
-                                                </svg>
-                                            </div>
+                            {{#each rows}}
+
+                            <div class="videoItem">
+                                <a data-open="sliderModal">
+                                    <div class="videoImageCont">
+                                        <img src="assets/img/{{ image }}">
+                                        <div class="roundIcon forVideo">
+                                            <svg>
+                                                <use xlink:href="#media"></use>
+                                            </svg>
                                         </div>
-                                        <div class="title">{{ title }}</div>
-                                    </a>
-                                </div>
-
-                                {{/each}}
+                                    </div>
+                                    <div class="title">{{ title }}</div>
+                                </a>
                             </div>
+
+                            {{/each}}
+
                             {{/ifequal}}
                             {{/each}}
 
-
                         </div>
+
                     </div>
 
                     {{/each}}

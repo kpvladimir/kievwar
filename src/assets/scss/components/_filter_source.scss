@@ -33,3 +33,53 @@
         }
     }
 }
+
+.sliderTitle{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    .title{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .sliderDate{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .sliderLink{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+}
+
+.tabs-title{
+
+    [data-tabs-target="sourceInfo"]{
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+} 
+
+.orbit-figure{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+
+    .orbit-image{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: all 0.5s;
+        z-index: 1;
+    }
+}

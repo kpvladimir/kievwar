@@ -15,3 +15,7 @@ require('foundation-sites');
 
 
 $(document).foundation();
+
+$('#sliderModal').bind('open.zf.reveal', function() {
+  $(window).trigger('resize');
+});
