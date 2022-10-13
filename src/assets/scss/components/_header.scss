@@ -18,18 +18,18 @@ header {
       }
 
       .title1 {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 60px;
-    margin-bottom: 8px;
-}
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 54px;
+      }
 
-.title2 {
-    font-size: 22px;
-    line-height: 31px;
- 
-}
-
+      @media(max-width:480px){
+        .title1 {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 44px;
+          }
+      }      
 
   }
 
@@ -129,3 +129,54 @@ label {
     font-weight: 700;
     color: $white;
 }
+
+#offCanvasMenu{
+
+  padding-top: 3rem;
+  background-color: $black;
+
+  .menu{
+  
+  li a {
+    color: $white;
+    font-weight: 700;
+
+    &:hover{
+      color: $blue;
+    }
+
+  }
+
+  li.active > a{
+    background-color: transparent;
+    color: $white;
+
+    &:hover{
+      color: $white;
+    }
+
+  }
+
+  li{
+    position: relative;
+  }
+
+  li.active::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 8px;
+      height: 100%;
+      background-color: $blue;
+  }
+
+  }
+
+  .close-button {
+    color: $white;
+  }
+
+}
+

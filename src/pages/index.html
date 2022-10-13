@@ -4,12 +4,18 @@ title: Головна
 {{> pagetitle}}
 <div class="grid-container ">
   <div class="grid-x grid-padding-x">
-    <div id="sidebar" class="large-3 cell sidebar padding-top-2">
+    <div id="sidebar" class="large-3 cell sidebar padding-top-2 show-for-large">
       {{> datefilter}}
     </div>
     <div class="large-9 cell main">
-      <div class="filterStatus">
-        <div class="m">24 лютого</div>
+
+      <div class="grid-x grid-padding-x filterStatus">
+        <div class="small-6 cell grid-x align-left align-middle">
+          <div class="m">24 лютого</div>
+        </div>
+        <div class="small-6 cell hide-for-large grid-x align-right align-middle">
+          <button class="button datebuttonMenu" data-toggle="filterDateIndex">Змінити дату</button>
+        </div>
       </div>
 
       {{#each data}}

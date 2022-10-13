@@ -25,6 +25,7 @@
         a{
             color: $orange;
             background-color: transparent;
+            cursor: default;
 
             &:hover{
                 color: $orange;
@@ -82,4 +83,23 @@
         transition: all 0.5s;
         z-index: 1;
     }
+}
+
+#filterSource{
+    padding-top: 3em;
+    background-color: $hover-bg;
+
+    .filterSource{
+        background-color: transparent;
+    }
+
+}
+
+.filterStatus .selectedSource{
+    
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 80%;
+
 }

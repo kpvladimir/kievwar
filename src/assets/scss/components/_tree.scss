@@ -795,9 +795,11 @@
     justify-content: center;
     align-items: center;
     width: 36px;
+    transition: all 0.3s;
 
     div{
         cursor: pointer;
+        transition: all 0.3s;
     }
 }
 

@@ -14,6 +14,20 @@
         padding: 5px;
         border-radius: 5px;
         background-color: $hover-bg;
+        cursor: pointer;
+    }
+
+    [aria-expanded="true"]{
+        .arrowButton{
+            /*transform: rotateX(180deg);*/
+
+            .arrow-down{
+                border-top-width: 0;
+                border-bottom-width: 0.4375rem;
+                border-color: transparent transparent #020202 transparent ;
+            }
+
+        }
     }
 
     .dateM{
@@ -48,8 +62,22 @@
 
         &.active{
             color: $orange;
+            cursor: default;
         }
 
     }
 
+}
+
+#filterDateIndex{
+
+    background-color: $white;
+    padding-top: 3rem;
+    box-shadow: inset 10px 0 12px -13px rgb(2, 2, 2 / 25%);
+
+}
+
+.datebuttonMenu{
+    margin: 0;
+    padding: 0.5em 1em;
 }

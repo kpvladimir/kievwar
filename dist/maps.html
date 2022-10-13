@@ -49,10 +49,10 @@
 
   <div class="title-bar" data-sticky-container data-responsive-toggle="responsive-menu" data-hide-for="large">
     <div class="title-bar-left">
-      <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+      <button class="menu-icon" type="button" data-open="offCanvasMenu"></button>
     </div>
     <div class="title-bar-center">
-      <span class="title-bar-title">Хроніки оборони Києва</span>
+      <!--span class="title-bar-title">Хроніки оборони Києва</span-->
     </div>
     <div class="title-bar-right">
       <button class="searchButton" data-open="searchModal">
@@ -67,12 +67,12 @@
     <div class="grid-container grid-x align-middle align-center" style="height:100%">
       <div class="ban_title">
         <div class="title1">Хроніки оборони Києва</div>
-        <div class="title2">2022</div>
+        <div class="title1">2022</div>
       </div>
     </div>
   </header>
 
-  <div data-sticky-container id="responsive-menu">
+  <div data-sticky-container id="responsive-menu" class="show-for-large">
     <div class="top-bar-container sticky sticky-topbar" data-sticky
       data-options="anchor: page; marginTop: 0; stickyOn: small;" data-top-anchor="200">
       <div class="grid-container">
@@ -104,23 +104,197 @@
     </div>
   </div>
 
-  <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+  <div class="off-canvas position-left" id="offCanvasMenu" data-off-canvas data-transition="overlap">
 
     <!-- Close button -->
     <button class="close-button" aria-label="Close menu" type="button" data-close>
       <span aria-hidden="true">&times;</span>
     </button>
 
-    <!-- Menu -->
-    <ul class="vertical menu">
-      <li><a href="#">Foundation</a></li>
-      <li><a href="#">Dot</a></li>
-      <li><a href="#">ZURB</a></li>
-      <li><a href="#">Com</a></li>
-      <li><a href="#">Slash</a></li>
-      <li><a href="#">Sites</a></li>
+    <ul class="vertical menu mobile">
+      <li><a href="./">Головна</a></li>
+      <li><a href="actions.html">Події</a></li>
+      <li><a href="situation.html">Ситуація</a></li>
+      <li class="active" ><a href="maps.html">Мапи</a></li>
+      <li><a href="history.html">Історії</a></li>
+      <li><a href="photo.html">Фото</a></li>
+      <li><a href="video.html">Відео</a></li>
+      <li><a href="about.html">Про проект</a></li>
     </ul>
 
+
+  </div>
+
+  <div class="off-canvas position-right" id="filterDateIndex" data-off-canvas>
+
+    <!-- Close button -->
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <div class="datesfilter">
+        <div class="mCont">
+            <div class="dateMCont" data-toggle="mdf-0" aria-expanded="true">
+                <div class="dateM">Лютий</div>
+                <div class="arrowButton">
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+            <div class="dateDCont" id="mdf-0" data-toggler data-animate="fade-in fade-out"
+                style="display:block" >
+                <div class="dateD active">
+                    <span>24</span> лютого
+                </div>
+                <div class="dateD">
+                    <span>25</span> лютого
+                </div>
+                <div class="dateD">
+                    <span>26</span> лютого
+                </div>
+                <div class="dateD">
+                    <span>27</span> лютого
+                </div>
+                <div class="dateD">
+                    <span>28</span> лютого
+                </div>
+                <div class="dateD">
+                    <span>29</span> лютого
+                </div>
+            </div>
+        </div>
+        <div class="mCont">
+            <div class="dateMCont" data-toggle="mdf-1" aria-expanded="true">
+                <div class="dateM">Березень</div>
+                <div class="arrowButton">
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+            <div class="dateDCont" id="mdf-1" data-toggler data-animate="fade-in fade-out"
+                style="display:none" >
+                <div class="dateD active">
+                    <span>1</span> березня
+                </div>
+                <div class="dateD">
+                    <span>2</span> березня
+                </div>
+                <div class="dateD">
+                    <span>3</span> березня
+                </div>
+                <div class="dateD">
+                    <span>4</span> березня
+                </div>
+                <div class="dateD">
+                    <span>5</span> березня
+                </div>
+                <div class="dateD">
+                    <span>6</span> березня
+                </div>
+                <div class="dateD">
+                    <span>7</span> березня
+                </div>
+                <div class="dateD">
+                    <span>8</span> березня
+                </div>
+                <div class="dateD">
+                    <span>9</span> березня
+                </div>
+                <div class="dateD">
+                    <span>10</span> березня
+                </div>
+                <div class="dateD">
+                    <span>12</span> березня
+                </div>
+                <div class="dateD">
+                    <span>11</span> березня
+                </div>
+                <div class="dateD">
+                    <span>13</span> березня
+                </div>
+                <div class="dateD">
+                    <span>15</span> березня
+                </div>
+                <div class="dateD">
+                    <span>18</span> березня
+                </div>
+                <div class="dateD">
+                    <span>20</span> березня
+                </div>
+                <div class="dateD">
+                    <span>22</span> березня
+                </div>
+                <div class="dateD">
+                    <span>26</span> березня
+                </div>
+                <div class="dateD">
+                    <span>30</span> березня
+                </div>
+            </div>
+        </div>
+        <div class="mCont">
+            <div class="dateMCont" data-toggle="mdf-2" aria-expanded="true">
+                <div class="dateM">Квітень</div>
+                <div class="arrowButton">
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+            <div class="dateDCont" id="mdf-2" data-toggler data-animate="fade-in fade-out"
+                style="display:none" >
+                <div class="dateD active">
+                    <span>1</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>2</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>3</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>4</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>5</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>6</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>7</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>8</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>9</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>10</span> квітня
+                </div>
+                <div class="dateD">
+                    <span>12</span> квітня
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="off-canvas position-right" id="filterSource" data-off-canvas>
+
+    <!-- Close button -->
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+          <ul class="vertical menu filterSource">
+              <li class="active" ><a href="#">Усі</a></li>
+              <li ><a href="#">Генштаб ЗСУ</a></li>
+              <li ><a href="#">ISW</a></li>
+              <li ><a href="#">Jomini of the West</a></li>
+              <li ><a href="#">Том Купер</a></li>
+              <li ><a href="#">Костянтин Машовець</a></li>
+              <li ><a href="#">«Медуза»</a></li>
+              <li ><a href="#">«Defense Express»</a></li>
+              <li ><a href="#">Юрій Бутусов</a></li>
+          </ul>
   </div>
 
   <div class="off-canvas-content" data-off-canvas-content>
@@ -135,7 +309,7 @@
         </div>
     </div><div class="grid-container">
         <div class="grid-x grid-padding-x">
-            <div class="large-3 cell">
+            <div class="large-3 cell show-for-large">
                       <ul class="vertical menu filterSource">
                           <li class="active" ><a href="#">Усі</a></li>
                           <li ><a href="#">Генштаб ЗСУ</a></li>
@@ -148,6 +322,15 @@
                           <li ><a href="#">Юрій Бутусов</a></li>
                       </ul>        </div>
             <div class="large-9 cell">
+    
+                <div class="grid-x grid-padding-x filterStatus hide-for-large">
+                    <div class="small-6 cell grid-x align-left align-middle">
+                        <div class="m selectedSource">Вибране джерело</div>
+                    </div>
+                    <div class="small-6 cell  grid-x align-right align-middle">
+                        <button class="button datebuttonMenu" data-toggle="filterSource">Фільтр</button>
+                    </div>
+                </div>
     
                 <div class="docContainer">
                     <div class="docTitle">Лютий</div>
@@ -5662,7 +5845,9 @@
         <div class="cell small-12 large-4 text-center medium-text-center large-text-left copy">
           <div class="grid-x align-middle align-center grid-padding-x grid-margin-y">
             <div class="cell medium-6 large-3">
-              <img src="assets/img/KyivMuseum_logo_on_yellow-01.png" style="width: 80px;">
+              <a href="http://www.kyivhistorymuseum.org" target="_blank" title="Музей історії міста Києва">
+                <img src="assets/img/KyivMuseum_logo_on_yellow-01.png" style="width: 80px;">
+              </a>
             </div>
             <div class="cell auto text-center medium-text-left">
               <div>&copy; В. Нахманович, 2022</div>

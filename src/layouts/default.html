@@ -49,10 +49,10 @@
 
   <div class="title-bar" data-sticky-container data-responsive-toggle="responsive-menu" data-hide-for="large">
     <div class="title-bar-left">
-      <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+      <button class="menu-icon" type="button" data-open="offCanvasMenu"></button>
     </div>
     <div class="title-bar-center">
-      <span class="title-bar-title">{{ site.slogan }}</span>
+      <!--span class="title-bar-title">{{ site.slogan }}</span-->
     </div>
     <div class="title-bar-right">
       <button class="searchButton" data-open="searchModal">
@@ -67,12 +67,12 @@
     <div class="grid-container grid-x align-middle align-center" style="height:100%">
       <div class="ban_title">
         <div class="title1">{{ site.slogan }}</div>
-        <div class="title2">{{ site.subslogan }}</div>
+        <div class="title1">{{ site.subslogan }}</div>
       </div>
     </div>
   </header>
 
-  <div data-sticky-container id="responsive-menu">
+  <div data-sticky-container id="responsive-menu" class="show-for-large">
     <div class="top-bar-container sticky sticky-topbar" data-sticky
       data-options="anchor: page; marginTop: 0; stickyOn: small;" data-top-anchor="200">
       <div class="grid-container">
@@ -99,22 +99,41 @@
     </div>
   </div>
 
-  <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+  <div class="off-canvas position-left" id="offCanvasMenu" data-off-canvas data-transition="overlap">
 
     <!-- Close button -->
     <button class="close-button" aria-label="Close menu" type="button" data-close>
       <span aria-hidden="true">&times;</span>
     </button>
 
-    <!-- Menu -->
-    <ul class="vertical menu">
-      <li><a href="#">Foundation</a></li>
-      <li><a href="#">Dot</a></li>
-      <li><a href="#">ZURB</a></li>
-      <li><a href="#">Com</a></li>
-      <li><a href="#">Slash</a></li>
-      <li><a href="#">Sites</a></li>
+    <ul class="vertical menu mobile">
+      {{#each menu}}
+      <li{{#ifpage alias}} class="active" {{/ifpage}}><a href="{{ href }}">{{ text }}</a></li>
+        {{/each}}
     </ul>
+
+
+  </div>
+
+  <div class="off-canvas position-right" id="filterDateIndex" data-off-canvas>
+
+    <!-- Close button -->
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    {{> datefilterM}}
+
+  </div>
+
+  <div class="off-canvas position-right" id="filterSource" data-off-canvas>
+
+    <!-- Close button -->
+    <button class="close-button" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    {{> sources}}
 
   </div>
 
@@ -132,7 +151,9 @@
         <div class="cell small-12 large-4 text-center medium-text-center large-text-left copy">
           <div class="grid-x align-middle align-center grid-padding-x grid-margin-y">
             <div class="cell medium-6 large-3">
-              <img src="{{root}}assets/img/KyivMuseum_logo_on_yellow-01.png" style="width: 80px;">
+              <a href="http://www.kyivhistorymuseum.org" target="_blank" title="{{ site.copy2 }}">
+                <img src="{{root}}assets/img/KyivMuseum_logo_on_yellow-01.png" style="width: 80px;">
+              </a>
             </div>
             <div class="cell auto text-center medium-text-left">
               <div>&copy; {{ site.copy1 }}, 2022</div>
