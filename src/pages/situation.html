@@ -61,6 +61,7 @@ title: Ситуація
                                     {{#each rows}}
                                     <div class="situationCont">
                                         <div class="situationTitle" data-open="situationModal-{{@../index}}{{@index}}">
+                                            <div class="dateCont forTime">{{ time }}</div>
                                             <div class="itemTitleText">{{ title }}</div>
                                         </div>
                                         <!--div class="situationTextCont" id="situation-{{@../index}}{{@index}}" data-toggler=".expanded">
@@ -76,7 +77,7 @@ title: Ситуація
                                                     <div class="large-12 cell">
                                                         <div class="revealTitle">{{ ../name }}</div>
                                                         <div class="historyInfo">
-                                                            <span class="date">{{date}}</span>
+                                                            <span class="date">{{time}} {{date}}</span>
                                                             <a href="{{ link }}" target="_blank"
                                                                 class="ext-link">Джерело<svg>
                                                                     <use xlink:href="#share"></use>

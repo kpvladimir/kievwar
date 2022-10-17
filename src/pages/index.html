@@ -78,6 +78,7 @@ title: Головна
               {{#each rows}}
               <div class="situationCont">
                 <div class="situationTitle" data-open="situationModal-{{@../index}}{{@index}}">
+                  <div class="dateCont forTime">{{ time }}</div>
                   <div class="itemTitleText">{{ title }}</div>
                 </div>
                 <!--div class="situationTextCont" id="situation-{{@../index}}{{@index}}" data-toggler=".expanded">
@@ -172,7 +173,7 @@ title: Головна
               style="display:none">
               {{#each rows}}
               <div class="mapItem">
-                <a data-open="sliderModal">
+                <a data-open="sliderMapModal">
                   <div class="imageMapCont">
                     <img src="assets/img/{{ image }}">
                     <div class="roundIcon forMap">
@@ -194,7 +195,7 @@ title: Головна
           <div class="imageDataCont">
             {{#each rows}}
             <div class="imageItem">
-              <a data-open="sliderModal">
+              <a data-open="sliderPhotoModal">
                 <div class="imagePreviewCont">
                   <img src="assets/img/{{ image }}">
                   <div class="roundIcon forMap">
@@ -214,7 +215,7 @@ title: Головна
           <div class="imageDataCont">
             {{#each rows}}
             <div class="videoItem">
-              <a data-open="sliderModal">
+              <a data-open="sliderVideoModal">
                 <div class="videoImageCont">
                   <img src="assets/img/{{ image }}">
                   <div class="roundIcon forVideo">
