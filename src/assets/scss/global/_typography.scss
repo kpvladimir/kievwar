@@ -72,9 +72,68 @@
     text-align: center;
 }
 
+.tabs {
+    border: none;
+}
+
+.tabs-title {
+    margin-right: 3px;
+}
+
 .tabs-title > a {
     padding: 1.12rem 1.5rem;
     font-weight: 400;
     font-size: 1rem;
     color: $black;
+    border-radius: 5px 5px 0 0;
+    border-color: $dark-gray;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+
+        .infoLink svg {
+            fill: $orange;
+        }
+
+}
+
+.tabs-title > a:focus, .tabs-title > a[aria-selected="true"] {
+    background-color: $dark-gray;
+    border-color: $dark-gray;
+    color: $white;
+
+            .infoLink svg {
+            fill: $white;
+        }
+}
+
+.tabs-content {
+    border: 1px solid $dark-gray;
+}
+
+.orbit-previous, .orbit-next {
+    //top: auto;
+    //bottom: 0;
+    //transform: translateY(60px);
+    background-color: $blue;
+    font-size: 30px;
+    padding: 1.5rem 1rem;
+    
+    cursor: pointer;
+
+    &:hover{
+        background-color: #426bda;
+    }
+
+    &:focus{
+        background-color: #426bda;
+    }
+
+}
+
+.orbit-previous{
+    border-radius: 0 5px 5px 0;
+}
+
+.orbit-next{
+    border-radius: 5px 0 0 5px;
 }
