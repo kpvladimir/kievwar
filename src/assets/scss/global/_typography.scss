@@ -1,32 +1,35 @@
-.content{
+.content {
 
-    h3,h4,h5,h6{
+    h3,
+    h4,
+    h5,
+    h6 {
         font-weight: 600;
     }
 
-    p{
+    p {
         font-size: 18px;
         line-height: 1.5;
         text-align: justify;
     }
 
-    li{
+    li {
         font-size: 18px;
         line-height: 1.5;
     }
 
 }
 
-.main{
+.main {
     border-left: 1px solid $light-gray;
 }
 
-.date{
+.date {
     font-style: italic;
     font-weight: 600;
 }
 
-.revealTitle{
+.revealTitle {
     font-size: 26px;
     line-height: 1.35;
     font-weight: 400;
@@ -35,7 +38,7 @@
     text-align: center;
 }
 
-.historyInfo{
+.historyInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,10 +81,12 @@
 
 .tabs-title {
     margin-right: 3px;
+    transform: translateY(1px);
+    background-color: #fff;
 }
 
-.tabs-title > a {
-    padding: 1.12rem 1.5rem;
+.tabs-title>a {
+    padding: 0.8rem 1.5rem;
     font-weight: 400;
     font-size: 1rem;
     color: $black;
@@ -90,50 +95,87 @@
     border-style: solid;
     border-width: 1px 1px 0 1px;
 
-        .infoLink svg {
-            fill: $orange;
-        }
+    .infoLink svg {
+        fill: $orange;
+    }
 
 }
 
-.tabs-title > a:focus, .tabs-title > a[aria-selected="true"] {
+.tabs-title>a:focus,
+.tabs-title>a[aria-selected="true"] {
     background-color: $dark-gray;
     border-color: $dark-gray;
     color: $white;
 
-            .infoLink svg {
-            fill: $white;
-        }
+    .infoLink svg {
+        fill: $white;
+    }
+}
+
+.tabs-title [data-tabs-target="sourceInfo"] {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
 }
 
 .tabs-content {
-    border: 1px solid $dark-gray;
+    border: 0px solid $dark-gray;
 }
 
-.orbit-previous, .orbit-next {
+.tabs-panel {
+    padding: 1rem 0;
+}
+
+.tabs {
+    border-bottom: 1px solid #646464;
+}
+
+.orbit-previous,
+.orbit-next {
     //top: auto;
     //bottom: 0;
     //transform: translateY(60px);
     background-color: $blue;
     font-size: 30px;
     padding: 1.5rem 1rem;
-    
+
     cursor: pointer;
 
-    &:hover{
+    &:hover {
         background-color: #426bda;
     }
 
-    &:focus{
+    &:focus {
         background-color: #426bda;
     }
 
 }
 
-.orbit-previous{
+.orbit-previous {
     border-radius: 0 5px 5px 0;
 }
 
-.orbit-next{
+.orbit-next {
     border-radius: 5px 0 0 5px;
+}
+
+.reveal {
+    min-height: 90%;
+}
+
+.slider-number {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 40px;
+    padding: 10px 20px;
+}
+
+.orbit-slide>a {
+    cursor: zoom-in;
 }

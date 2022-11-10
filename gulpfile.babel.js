@@ -13,7 +13,7 @@ import named         from 'vinyl-named';
 import autoprefixer  from 'autoprefixer';
 import imagemin      from 'gulp-imagemin';
 
-
+const merge = require("merge-stream");
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const uncss = require('postcss-uncss');
@@ -38,7 +38,7 @@ console.log(UNCSS_OPTIONS);
 // Build the "dist" folder by running all of the below tasks
 // Sass must be run later so UnCSS can search for used classes in the others assets.
 gulp.task('build',
-  gulp.series(clean, gulp.parallel(pages, javascript, images), sassBuild, styleGuide)
+  gulp.series(clean, copy, gulp.parallel(pages, javascript, images), sassBuild, styleGuide)
 );
 
 // Build the site, run the server, and watch for file changes
@@ -67,8 +67,14 @@ function makeDocsFolder(done) {
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy() {
-  return gulp.src(PATHS.assets)
-    .pipe(gulp.dest(PATHS.dist + '/assets'));
+
+   return merge([
+      gulp.src(PATHS.assets).pipe(gulp.dest(PATHS.dist + '/assets')),
+      gulp.src(PATHS.assets+'/css/*.css').pipe(gulp.dest(PATHS.dist + '/assets/css'))
+  ]);
+
+  //return gulp.src(PATHS.assets+'/**/*')
+   // .pipe(gulp.dest(PATHS.dist + '/assets'));
 }
 
 // Copy page templates into finished HTML files
