@@ -21,7 +21,6 @@ require(['./lib/lightgallery.min.js'], function () {
 // the line below
 import './lib/foundation-explicit-pieces';
 
-
 $(document).foundation();
 
 $('#sliderMapModal').on('closeme.zf.reveal', function () {
@@ -33,6 +32,7 @@ $('#sliderMapModal').on('closeme.zf.reveal', function () {
   });
 
   $(window).trigger('resize');
+
 });
 
 $('#sliderMapModal').on('open.zf.reveal', function () {
@@ -59,6 +59,8 @@ $('#sliderPhotoModal').on('closeme.zf.reveal', function () {
     selector: 'li a',
     speed: 500
   });
+
+  $(window).trigger('resize');
 
 });
 
