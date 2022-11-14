@@ -44,6 +44,13 @@
         &[aria-expanded="true"] .arrowButton {
             transform: rotateX(180deg);
         }
+
+        &.docTitleIndex {
+            padding: 0;
+            background-color: #ffff;
+            cursor: default;
+        }
+
     }
 
 
