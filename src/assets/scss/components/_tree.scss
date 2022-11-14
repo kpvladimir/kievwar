@@ -1,20 +1,20 @@
-.filterStatus{
+.filterStatus {
     margin-bottom: 20px;
 
-    .m{
+    .m {
         text-transform: uppercase;
         font-size: 1.3rem;
         font-weight: 700;
         color: $orange;
     }
 
-    .d{
+    .d {
         font-size: 1.2rem;
     }
 }
 
-.ext-link{
-    svg{
+.ext-link {
+    svg {
         fill: $blue;
         color: inherit;
         width: 27px;
@@ -24,33 +24,46 @@
     }
 }
 
-.docContainer{
+.docContainer {
     margin-bottom: 20px;
 
-    .docTitle{
+    .docTitle {
         text-transform: uppercase;
         font-size: 1.3rem;
         font-weight: 700;
         color: $black;
         margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &[aria-expanded="true"] .arrowButton {
+            transform: rotateX(180deg);
+        }
     }
 
-    .docData{
+
+
+    .docData {
         padding-left: 5%;
     }
 
-    .sourceCont{
+    .sourceCont {
         padding-top: 5px;
         margin-bottom: 5px;
 
-        .sourceTitle{
+        .sourceTitle {
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 15px;
             cursor: pointer;
 
-            .sourceLinkTree{
+            .sourceLinkTree {
                 display: flex;
                 width: 100%;
                 justify-content: space-between;
@@ -58,31 +71,31 @@
                 border-radius: 5px;
                 padding: 5px;
 
-                &:hover{
+                &:hover {
                     background-color: $hover-bg;
                 }
 
-                &[aria-expanded="true"]{
+                &[aria-expanded="true"] {
                     background-color: $hover-bg;
                 }
 
             }
 
-            .buttonCont{
+            .buttonCont {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 gap: 15px;
             }
 
-            .sourceTitleText{
+            .sourceTitleText {
                 font-size: 1.1rem;
                 text-transform: uppercase;
             }
 
-            .sourceInfo{
+            .sourceInfo {
 
-                div{
+                div {
                     color: $orange;
                     border: 2px solid $orange;
                     border-radius: 50%;
@@ -98,20 +111,20 @@
 
             }
 
-            .sourceButton{
+            .sourceButton {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 36px;
 
-                div{
+                div {
                     cursor: pointer;
                 }
 
             }
-        }    
-        
-        .sourceDataCont{
+        }
+
+        .sourceDataCont {
             overflow: hidden;
             padding-left: 5%;
             padding-top: 10px;
@@ -120,11 +133,11 @@
 
     }
 
-    .situationCont{
+    .situationCont {
         padding-top: 5px;
         margin-bottom: 5px;
 
-        .situationTitle{
+        .situationTitle {
             display: flex;
             gap: 15px;
             cursor: pointer;
@@ -136,11 +149,11 @@
                 background-color: #f1f1f1;
             }
 
-        }    
-        
-        .situationTextCont{
+        }
+
+        .situationTextCont {
             display: flex;
-            flex-direction:row;
+            flex-direction: row;
             height: 0;
             overflow: hidden;
             gap: 15px;
@@ -150,35 +163,35 @@
 
 }
 
-.actionCont{
+.actionCont {
     padding-top: 5px;
     margin-bottom: 5px;
 
-    .actionsTitle{
+    .actionsTitle {
         display: flex;
         gap: 15px;
         cursor: pointer;
         padding: 5px;
         border-radius: 5px;
 
-        &:hover{
+        &:hover {
             color: $blue;
             background-color: $hover-bg;
         }
 
-        &[aria-expanded="true"]{
+        &[aria-expanded="true"] {
             background-color: $hover-bg;
         }
 
-        .actionTitleText{
+        .actionTitleText {
             font-weight: 500;
             font-size: 1rem;
             flex: 1;
         }
 
-    }    
-    
-    .actionTextCont{
+    }
+
+    .actionTextCont {
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -187,37 +200,37 @@
 
 }
 
-.actionBlock{
+.actionBlock {
 
     margin-bottom: 20px;
 
-    .actionHeader{
+    .actionHeader {
         display: flex;
         flex-direction: row;
     }
 
-    .actionTime{
+    .actionTime {
         font-weight: 500;
         font-size: 1rem;
         font-style: italic;
         margin-right: 10px;
     }
 
-    .actionTitle{
+    .actionTitle {
         font-weight: 600;
         font-size: 1rem;
     }
 
-    .actionTextCont{
+    .actionTextCont {
         padding: 5px 0;
 
-        a{
+        a {
             text-align: right;
             display: block;
             margin-bottom: 5px;
         }
 
-        .content{
+        .content {
             text-align: justify;
         }
 
@@ -225,79 +238,79 @@
 
 }
 
-.photoCont{
+.photoCont {
     padding-top: 5px;
     margin-bottom: 5px;
     border-width: 1px 0 0 0;
     border-color: $gray;
     border-style: dotted;
 
-    .photoTitle{
+    .photoTitle {
         display: flex;
         gap: 15px;
         cursor: pointer;
         padding: 5px 0;
 
-        &:hover{
+        &:hover {
             background-color: $gray;
         }
 
-        .photoDate{
+        .photoDate {
             font-size: 1.2rem;
             font-weight: 700;
             color: $orange;
             width: 106px;
         }
 
-        .photoTitleText{
+        .photoTitleText {
             font-weight: 600;
             font-size: 1.1rem;
             flex: 1;
         }
 
-        .photoButton{
+        .photoButton {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 36px;
 
-            div{
+            div {
                 cursor: pointer;
             }
 
         }
-    }    
-    
-    .photoTextCont{
+    }
+
+    .photoTextCont {
         display: flex;
-        flex-direction:row;
+        flex-direction: row;
         height: 0;
         overflow: hidden;
         gap: 15px;
 
-        &.expanded{
+        &.expanded {
             height: auto;
             padding-top: 10px;
             padding-bottom: 10px;
         }
 
-        .imageCont{
+        .imageCont {
             padding: 2px;
 
-            img{
+            img {
                 max-width: 300px;
                 margin: 0;
             }
         }
 
-        .contentPhoto{
+        .contentPhoto {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
 
-        .content p{
-            font-size: 1rem;
-        }
+            .content p {
+                font-size: 1rem;
+            }
 
         }
 
@@ -383,7 +396,7 @@
 }
 */
 
-.imageDataCont{
+.imageDataCont {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -391,10 +404,10 @@
     justify-content: space-between;
 }
 
-.mapItem{
+.mapItem {
     width: 48%;
-    
-    .imageMapCont{
+
+    .imageMapCont {
         position: relative;
         border-radius: 7px;
         overflow: hidden;
@@ -403,7 +416,7 @@
         height: 0;
         padding-bottom: 75%;
 
-        img{
+        img {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -413,7 +426,7 @@
             z-index: 1;
         }
 
-        &::after{
+        &::after {
             content: ' ';
             position: absolute;
             top: 0;
@@ -425,41 +438,41 @@
             z-index: 2;
         }
 
-        .roundIcon{
+        .roundIcon {
             z-index: 3;
         }
 
     }
 
-    .title{
+    .title {
         text-align: center;
         line-height: 1.1;
         color: $black;
         font-size: 0.95rem;
     }
 
-    &:hover{
+    &:hover {
 
-        img{
+        img {
             transform: scale(1.1);
         }
 
-        .title{
+        .title {
             color: $blue;
         }
 
     }
 
-    @media(max-width: 640px){
+    @media(max-width: 640px) {
         width: 100%;
     }
 
 }
 
-.imageItem{
+.imageItem {
     width: 48%;
-    
-    .imagePreviewCont{
+
+    .imagePreviewCont {
         position: relative;
         border-radius: 7px;
         overflow: hidden;
@@ -468,7 +481,7 @@
         height: 0;
         padding-bottom: 66.66%;
 
-        img{
+        img {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -478,7 +491,7 @@
             z-index: 1;
         }
 
-        &::after{
+        &::after {
             content: ' ';
             position: absolute;
             top: 0;
@@ -490,40 +503,40 @@
             z-index: 2;
         }
 
-        .roundIcon{
+        .roundIcon {
             z-index: 3;
         }
     }
 
-    .title{
+    .title {
         text-align: center;
         line-height: 1.1;
         color: $black;
         font-size: 0.95rem;
     }
 
-    &:hover{
+    &:hover {
 
-        img{
+        img {
             transform: scale(1.1);
         }
 
-        .title{
+        .title {
             color: $blue;
         }
 
     }
 
-    @media(max-width: 640px){
+    @media(max-width: 640px) {
         width: 100%;
     }
 
 }
 
-.videoItem{
+.videoItem {
     width: 48%;
-    
-    .videoImageCont{
+
+    .videoImageCont {
         position: relative;
         border-radius: 7px;
         overflow: hidden;
@@ -532,7 +545,7 @@
         height: 0;
         padding-bottom: 56.25%;
 
-        img{
+        img {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -542,7 +555,7 @@
             z-index: 1;
         }
 
-        &::after{
+        &::after {
             content: ' ';
             position: absolute;
             top: 0;
@@ -554,38 +567,38 @@
             z-index: 2;
         }
 
-        .roundIcon{
+        .roundIcon {
             z-index: 3;
         }
 
     }
 
-    .title{
+    .title {
         text-align: center;
         line-height: 1.1;
         color: $black;
         font-size: 0.95rem;
     }
 
-    &:hover{
+    &:hover {
 
-        img{
+        img {
             transform: scale(1.1);
         }
 
-        .title{
+        .title {
             color: $blue;
         }
 
     }
 
-    @media(max-width: 640px){
+    @media(max-width: 640px) {
         width: 100%;
     }
 
 }
 
-.roundIcon{
+.roundIcon {
     width: 53px;
     height: 53px;
     display: flex;
@@ -597,26 +610,26 @@
     position: absolute;
     opacity: 0.8;
 
-    svg{
+    svg {
         width: 24px;
         height: 24px;
         fill: $white;
         transform: scale(1.2);
     }
 
-    &.forMap{
+    &.forMap {
         top: 10px;
         left: 10px;
     }
 
-    &.forVideo{
+    &.forVideo {
         top: 50%;
         left: 50%;
         width: 40px;
         height: 40px;
-        transform: translate(-20px,-20px);
+        transform: translate(-20px, -20px);
 
-        svg{
+        svg {
             width: 20px;
             height: 22px;
             fill: $white;
@@ -628,13 +641,13 @@
 }
 
 
-.thumbnailForMap{
+.thumbnailForMap {
     margin-bottom: 0;
     height: 200px;
     width: 300px;
     overflow: hidden;
 
-    img{
+    img {
         object-fit: cover;
         object-position: center;
         width: 300px;
@@ -643,66 +656,66 @@
 
 }
 
-.videoCont{
+.videoCont {
     padding-top: 5px;
     margin-bottom: 5px;
     border-width: 1px 0 0 0;
     border-color: $gray;
     border-style: dotted;
 
-    .videoTitle{
+    .videoTitle {
         display: flex;
         gap: 15px;
         cursor: pointer;
         padding: 5px 0;
 
-        &:hover{
+        &:hover {
             background-color: $gray;
         }
 
-        .videoDate{
+        .videoDate {
             font-size: 1.2rem;
             font-weight: 700;
             color: $orange;
             width: 106px;
         }
 
-        .videoTitleText{
+        .videoTitleText {
             font-weight: 600;
             font-size: 1.1rem;
             flex: 1;
         }
 
-        .videoButton{
+        .videoButton {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 36px;
 
-            div{
+            div {
                 cursor: pointer;
             }
 
         }
-    }    
-    
-    .videoTextCont{
+    }
+
+    .videoTextCont {
         display: flex;
-        flex-direction:row;
+        flex-direction: row;
         height: 0;
         overflow: hidden;
         gap: 15px;
 
-        &.expanded{
+        &.expanded {
             height: auto;
             padding-top: 10px;
             padding-bottom: 10px;
         }
 
-        .imageCont{
+        .imageCont {
             padding: 2px;
 
-            img{
+            img {
                 max-width: 300px;
                 margin: 0;
             }
@@ -710,12 +723,12 @@
 
     }
 
-    .contentVideo{
+    .contentVideo {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
-        .content p{
+        .content p {
             font-size: 1rem;
         }
 
@@ -723,115 +736,115 @@
 
 }
 
-.mTitle{
+.mTitle {
     font-size: 1.5rem;
     font-weight: 600;
     color: $orange;
     margin-bottom: 20px;
 }
 
-.dCont{
+.dCont {
     padding-top: 5px;
     margin-bottom: 5px;
 
-    .dTitle{
+    .dTitle {
         display: flex;
         gap: 15px;
         cursor: pointer;
         padding: 5px;
         border-radius: 5px;
 
-        &:hover{
+        &:hover {
             color: $blue;
             background-color: $hover-bg;
         }
 
-        .dTitleText{
+        .dTitleText {
             font-size: 1.1rem;
             text-transform: uppercase;
             flex: 1;
         }
 
-        &[aria-expanded="true"]{
+        &[aria-expanded="true"] {
             background-color: $hover-bg;
         }
 
-    }    
+    }
 
-    .listCont{
+    .listCont {
         overflow: hidden;
         padding-left: 5%;
         padding-top: 20px;
 
-        &.expanded{
+        &.expanded {
             height: auto;
             padding-top: 10px;
             padding-bottom: 10px;
         }
     }
-    
+
 }
 
-.dateCont{
+.dateCont {
     font-weight: 400;
     font-style: italic;
     width: 55px;
 
-    &.forDate{
+    &.forDate {
         width: 106px;
     }
 
-    &.forTime{
+    &.forTime {
         width: 55px;
     }
 }
 
-.itemTitleText{
+.itemTitleText {
     font-weight: 500;
     font-size: 1rem;
 }
 
-.arrowButton{
+.arrowButton {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 36px;
     transition: all 0.3s;
 
-    div{
+    div {
         cursor: pointer;
         transition: all 0.3s;
     }
 }
 
-.pmButton{
+.pmButton {
 
     width: 30px;
     height: 30px;
     position: relative;
 
     &:after {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url(../img/plus.png);
-    transition: all .5s;
-    background-size: 80%;
-}
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(../img/plus.png);
+        transition: all .5s;
+        background-size: 80%;
+    }
 
 }
 
-.sourceLink{
+.sourceLink {
     height: 26px;
 }
 
-.infoLink{
+.infoLink {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -842,28 +855,28 @@
     border: none;
     transition: all 0.5s ease-in;
 
-    svg{
+    svg {
         width: 24px;
-        height: 24px; 
-        fill: $blue; 
+        height: 24px;
+        fill: $blue;
     }
 
-    &:hover{
-        svg{
-          fill: $orange; 
+    &:hover {
+        svg {
+            fill: $orange;
         }
     }
 }
 
-.buttonPM{
-    
+.buttonPM {
+
     width: 30px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    div{
+
+    div {
         background-color: $blue;
         border-radius: 5px;
         width: 24px;
@@ -871,14 +884,14 @@
         position: relative;
 
         &:before,
-        &:after{
+        &:after {
             content: "";
             position: absolute;
             background-color: white;
             transition: transform 0.1s ease-out;
         }
 
-        &:before{
+        &:before {
             top: 4px;
             left: 50%;
             width: 2px;
@@ -886,14 +899,14 @@
             margin-left: -1px;
         }
 
-        &:after{
+        &:after {
             top: 50%;
             left: 4px;
             width: 16px;
             height: 2px;
             margin-top: -1px;
         }
-        
+
         /*
         &:hover{
             cursor: pointer;
@@ -904,11 +917,16 @@
     }
 }
 
-[aria-expanded="true"]{
+[aria-expanded="true"] {
 
-    .buttonPM div{
-        &:before{ transform: rotate(90deg); }
-        &:after{ transform: rotate(180deg); }
+    .buttonPM div {
+        &:before {
+            transform: rotate(90deg);
+        }
+
+        &:after {
+            transform: rotate(180deg);
+        }
     }
 
 }

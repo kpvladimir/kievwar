@@ -13,8 +13,14 @@ page: history
 
             {{#each video}}
             <div class="docContainer">
-                <div class="docTitle">{{m}}</div>
-                <div class="docData">
+                <div class="docTitle" data-toggle="m-{{@index}}">
+                    <div>{{m}}</div>
+                    <div class="arrowButton">
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <div id="m-{{@index}}" class="docData" data-toggler data-animate="fade-in fade-out"
+                    {{#ifequal @index 0}}style="display:block" {{else}}style="display:none" {{/ifequal}}>
                     {{#each dataM}}
 
                     <div class="dCont">
@@ -25,7 +31,8 @@ page: history
                             </div>
                         </div>
                         <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler
-                            data-animate="fade-in fade-out" style="display:none">
+                            data-animate="fade-in fade-out" {{#ifequal @index 0}}style="display:block"
+                            {{else}}style="display:none" {{/ifequal}}>
 
                             {{#each ../../data}}
                             {{#ifequal type 'history'}}
@@ -46,7 +53,7 @@ page: history
                                             <div class="revealTitle">{{ title }}</div>
                                             <div class="historyInfo">
                                                 <span class="date">{{date}}</span>
-                                                <a href="{{ link }}" target="_blank" class="ext-link">Джерело<svg>
+                                                <a href="{{ link }}" target="_blank" class="ext-link">{{source}}<svg>
                                                         <use xlink:href="#share"></use>
                                                     </svg></a>
                                             </div>

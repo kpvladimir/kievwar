@@ -13,8 +13,14 @@ title: Відео
 
             {{#each video}}
             <div class="docContainer">
-                <div class="docTitle">{{m}}</div>
-                <div class="docData">
+                <div class="docTitle" data-toggle="m-{{@index}}">
+                    <div>{{m}}</div>
+                    <div class="arrowButton">
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <div id="m-{{@index}}" class="docData" data-toggler data-animate="fade-in fade-out"
+                    {{#ifequal @index 0}}style="display:block" {{else}}style="display:none" {{/ifequal}}>
 
                     {{#each dataM}}
 
@@ -27,14 +33,15 @@ title: Відео
                         </div>
 
                         <div class="imageDataCont" id="md-{{@index}}{{@../index}}" data-toggler
-                            data-animate="fade-in fade-out" style="display:none">
+                            data-animate="fade-in fade-out" {{#ifequal @index 0}}style="display:flex"
+                            {{else}}style="display:none" {{/ifequal}}>
                             {{#each ../../data}}
                             {{#ifequal type 'video'}}
 
                             {{#each rows}}
 
                             <div class="videoItem">
-                                <a data-open="sliderModal">
+                                <a data-open="sliderVideoModal">
                                     <div class="videoImageCont">
                                         <img src="assets/img/{{ image }}">
                                         <div class="roundIcon forVideo">

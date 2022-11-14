@@ -9,19 +9,31 @@ title: Мапи
         </div>
         <div class="large-9 cell">
 
-            <div class="grid-x grid-padding-x filterStatus hide-for-large">
-                <div class="small-6 cell grid-x align-left align-middle">
-                    <div class="m selectedSource">Вибране джерело</div>
+            <div class="grid-x grid-padding-x filterStatus">
+                <div class="small-8 large-12 cell grid-x align-left align-middle">
+                    <div id="sourceFiltered" class="m selectedSource" style="font-size: 110%;">Всі джерела</div>
+                    <div id="sourceFilteredMob" class="m selectedSource hide-for-large">Всі джерела</div>
+                    &nbsp;&nbsp;<div id="infoTooltip" class="infoLink infoLinkFilter" data-tooltip title="">
+                        <svg class="icon">
+                            <use xlink:href="#info"></use>
+                        </svg>
+                    </div>
                 </div>
-                <div class="small-6 cell  grid-x align-right align-middle">
+                <div class="small-4 cell grid-x align-right align-middle hide-for-large">
                     <button class="button datebuttonMenu" data-toggle="filterSource">Фільтр</button>
                 </div>
             </div>
 
             {{#each video}}
             <div class="docContainer">
-                <div class="docTitle">{{m}}</div>
-                <div class="docData">
+                <div class="docTitle" data-toggle="m-{{@index}}">
+                    <div>{{m}}</div>
+                    <div class="arrowButton">
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <div id="m-{{@index}}" class="docData" data-toggler data-animate="fade-in fade-out"
+                    {{#ifequal @index 0}}style="display:block" {{else}}style="display:none" {{/ifequal}}>
                     {{#each dataM}}
 
                     <div class="dCont">
@@ -32,7 +44,8 @@ title: Мапи
                             </div>
                         </div>
                         <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler
-                            data-animate="fade-in fade-out" style="display:none">
+                            data-animate="fade-in fade-out" {{#ifequal @index 0}}style="display:block"
+                            {{else}}style="display:none" {{/ifequal}}>
 
                             {{#each ../../data}}
                             {{#ifequal type 'maps'}}
@@ -58,12 +71,13 @@ title: Мапи
 
                                 </div>
                                 <div class="imageDataCont" id="sourceMap-{{@index}}" data-toggler
-                                    data-animate="fade-in fade-out" style="display:none">
+                                    data-animate="fade-in fade-out" {{#ifequal @index 0}}style="display:flex"
+                                    {{else}}style="display:none" {{/ifequal}}>
 
                                     {{#each rows}}
 
                                     <div class="mapItem">
-                                        <a data-open="sliderModal">
+                                        <a data-open="sliderMapModal">
                                             <div class="imageMapCont">
                                                 <img src="assets/img/{{ image }}">
                                                 <div class="roundIcon forMap">

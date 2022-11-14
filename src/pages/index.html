@@ -38,7 +38,7 @@ title: Головна
             <div class="actionTextCont" id="action-{{@index}}" data-toggler data-animate="fade-in fade-out"
               style="display:none">
               <a href="{{ link }}" target="_blank" class="text-right ext-link margin-bottom-1">
-                Джерело
+                {{ source }}
                 <svg>
                   <use xlink:href="#share"></use>
                 </svg>
@@ -95,14 +95,14 @@ title: Головна
                         <div class="historyInfo">
                           <span class="date">{{time}} {{date}}</span>
                           <a href="{{ link }}" target="_blank" class="ext-link">
-                            Джерело
+                            {{ ../name }}
                             <svg>
                               <use xlink:href="#share"></use>
                             </svg></a>
                         </div>
                         <div class="content">
                           <p>{{ text }}</p>
-                          <p><b><em>{{ ../name }}</em></b></p>
+                          <!--p><b><em>{{ ../name }}</em></b></p-->
                         </div>
                       </div>
                     </div>
@@ -134,7 +134,8 @@ title: Головна
                   <div class="revealTitle">{{ title }}</div>
                   <div class="historyInfo">
                     <span class="date">{{date}}</span>
-                    <a href="{{ link }}" target="_blank" class="ext-link">Джерело
+                    <a href="{{ link }}" target="_blank" class="ext-link">
+                      {{ source }}
                       <svg>
                         <use xlink:href="#share"></use>
                       </svg>

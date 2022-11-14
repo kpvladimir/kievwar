@@ -13,8 +13,14 @@ page: actions
 
             {{#each video}}
             <div class="docContainer">
-                <div class="docTitle">{{m}}</div>
-                <div class="docData">
+                <div class="docTitle" data-toggle="m-{{@index}}">
+                    <div>{{m}}</div>
+                    <div class="arrowButton">
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <div id="m-{{@index}}" class="docData" data-toggler data-animate="fade-in fade-out"
+                    {{#ifequal @index 0}}style="display:block" {{else}}style="display:none" {{/ifequal}}>
 
                     {{#each dataM}}
 
@@ -26,7 +32,8 @@ page: actions
                             </div>
                         </div>
                         <div class="listCont" id="md-{{@index}}{{@../index}}" data-toggler
-                            data-animate="fade-in fade-out" style="display:none">
+                            data-animate="fade-in fade-out" {{#ifequal @index 0}}style="display:block"
+                            {{else}}style="display:none" {{/ifequal}}>
 
                             {{#each ../../data}}
                             {{#ifequal type 'action'}}
@@ -38,7 +45,7 @@ page: actions
                                 </div>
                                 <div class="actionTextCont">
                                     <a href="{{ link }}" target="_blank" class="text-right ext-link">
-                                        Джерело<svg>
+                                        {{source}}<svg>
                                             <use xlink:href="#share"></use>
                                         </svg>
                                     </a>

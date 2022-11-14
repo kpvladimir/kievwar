@@ -109,3 +109,30 @@ $('#sliderVideoModal').on('open.zf.reveal', function () {
   }, 500);
 
 });
+
+$('#infoTooltip').hide();
+
+$('.filterSource a').on('click', function (e) {
+
+  e.preventDefault();
+
+  $('#infoTooltip').foundation('_destroy');
+
+  var text = $(this).data('fullname');
+  var info = $(this).data('info');
+  var short = $(this).text();
+
+  $('#sourceFiltered').text(text);
+  $('#sourceFilteredMob').text(short);
+  $('#infoTooltip').attr('title', info);
+
+  if (info != '') {
+    $('#infoTooltip').show();
+    new Foundation.Tooltip($('#infoTooltip'));
+  } else {
+    $('#infoTooltip').hide();
+  }
+
+
+
+});
